@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EmpleadoBLL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -51,6 +52,10 @@
     <ProjectReference Include="..\DataAccesLayer\DataAccessLayer.csproj">
       <Project>{bb81045e-e94e-41e1-ad13-877c3140a3e6}</Project>
       <Name>DataAccessLayer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Interfaces\Interfaces.csproj">
+      <Project>{4a260d7b-2803-4986-8660-a4896686e397}</Project>
+      <Name>Interfaces</Name>
     </ProjectReference>
     <ProjectReference Include="..\SecurityLayer\SecurityLayer.csproj">
       <Project>{abb6f14a-571e-4f8d-adf9-7b21c0c63e8d}</Project>

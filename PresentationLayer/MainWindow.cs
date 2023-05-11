@@ -9,6 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PresentationLayer.Formularios.GestionUsuarios;
+using BusinessLogicLayer;
 
 namespace PresentationLayer
 {
@@ -26,5 +28,41 @@ namespace PresentationLayer
             materialSkinManager.ColorScheme = new ColorScheme(Primary.Indigo500, Primary.Indigo700, Primary.Indigo100, Accent.Pink200, TextShade.WHITE);
 
         }
+
+        private void toggleMode_CheckedChanged(object sender, EventArgs e)
+        {
+            if (toggleMode.Checked)
+            {
+                materialSkinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.DARK;
+            }
+            else
+            {
+                materialSkinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.LIGHT;
+
+            }
+        }
+
+        private void btnHome_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            Form frmGestionUsuario = new frmGestionUsuario();
+            ShowChildFormInContainer(frmGestionUsuario, panelMainMenu);
+        }
+
+
+        private void ShowChildFormInContainer(Form childForm, Panel containerPanel)
+        {
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Location = new Point(0, 0);
+            containerPanel.Controls.Clear();
+            containerPanel.Controls.Add(childForm);
+            childForm.Show();
+        }
+
     }
 }

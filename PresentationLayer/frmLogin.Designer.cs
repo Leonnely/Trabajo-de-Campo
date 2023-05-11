@@ -51,7 +51,7 @@
             this.materialTextBox21.HideSelection = true;
             this.materialTextBox21.Hint = "Correo";
             this.materialTextBox21.LeadingIcon = null;
-            this.materialTextBox21.Location = new System.Drawing.Point(75, 314);
+            this.materialTextBox21.Location = new System.Drawing.Point(75, 312);
             this.materialTextBox21.MaxLength = 32767;
             this.materialTextBox21.MouseState = MaterialSkin.MouseState.OUT;
             this.materialTextBox21.Name = "materialTextBox21";
@@ -143,7 +143,7 @@
             this.iconPictureBox1.BackColor = System.Drawing.SystemColors.Control;
             this.iconPictureBox1.Flip = FontAwesome.Sharp.FlipOrientation.Horizontal;
             this.iconPictureBox1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
+            this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.User;
             this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
             this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox1.IconSize = 149;

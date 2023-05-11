@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecurityLayer", "SecurityLa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PresentationLayer", "PresentationLayer\PresentationLayer.csproj", "{19A0599D-1CE8-475C-99D7-8E68C29D0738}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces", "Interfaces\Interfaces.csproj", "{4A260D7B-2803-4986-8660-A4896686E397}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{19A0599D-1CE8-475C-99D7-8E68C29D0738}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19A0599D-1CE8-475C-99D7-8E68C29D0738}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{19A0599D-1CE8-475C-99D7-8E68C29D0738}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A260D7B-2803-4986-8660-A4896686E397}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A260D7B-2803-4986-8660-A4896686E397}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A260D7B-2803-4986-8660-A4896686E397}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A260D7B-2803-4986-8660-A4896686E397}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
