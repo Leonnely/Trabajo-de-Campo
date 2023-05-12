@@ -27,6 +27,7 @@ namespace PresentationLayer
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.Indigo500, Primary.Indigo700, Primary.Indigo100, Accent.Pink200, TextShade.WHITE);
 
+            Application.Exit();
         }
 
         private void toggleMode_CheckedChanged(object sender, EventArgs e)
@@ -49,8 +50,7 @@ namespace PresentationLayer
 
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
-            Form frmGestionUsuario = new frmGestionUsuario();
-            ShowChildFormInContainer(frmGestionUsuario, panelMainMenu);
+            
         }
 
 
@@ -64,5 +64,20 @@ namespace PresentationLayer
             childForm.Show();
         }
 
+        private void MainWindow_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MainWindow_FormClosed(object sender, FormClosedEventArgs e)
+        {
+
+        }
+
+        private void btnConsultarEmpleados_Click(object sender, EventArgs e)
+        {
+            Form frmGestionUsuario = new frmGestionUsuario();
+            ShowChildFormInContainer(frmGestionUsuario, panelMainMenu);
+        }
     }
 }

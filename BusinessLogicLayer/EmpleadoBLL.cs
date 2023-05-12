@@ -18,9 +18,17 @@ namespace BusinessLogicLayer
             GestorEmpleados = new EmpleadoDAL();
         }
 
+
+        public string CrearNombreUsuario(Empleado emp)
+        {
+            string NombreUsuario = emp.Nombre.Substring(0, 2) + emp.Apellido.Substring(0, 2) + emp.Telefono.Substring(emp.Telefono.Length - 2);
+
+            return NombreUsuario;
+        }
+
         public void Actualizar(Empleado entidad)
         {
-            throw new NotImplementedException();
+            GestorEmpleados.Actualizar(entidad);
         }
 
         public void Agregar(Empleado entidad)
@@ -42,5 +50,6 @@ namespace BusinessLogicLayer
         {
             return GestorEmpleados.ObtenerTodos();
         }
+
     }
 }

@@ -28,65 +28,42 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btnHome = new FontAwesome.Sharp.IconButton();
-            this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
-            this.toggleMode = new MaterialSkin.Controls.MaterialSwitch();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.btnUsuarios = new FontAwesome.Sharp.IconButton();
             this.panelMainMenu = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.toggleMode = new MaterialSkin.Controls.MaterialSwitch();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.empleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnConsultarEmpleados = new FontAwesome.Sharp.IconMenuItem();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
-            this.panel4.SuspendLayout();
-            this.panel2.SuspendLayout();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
+            // 
+            // panelMainMenu
+            // 
+            this.panelMainMenu.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelMainMenu.Location = new System.Drawing.Point(3, 130);
+            this.panelMainMenu.Name = "panelMainMenu";
+            this.panelMainMenu.Size = new System.Drawing.Size(996, 573);
+            this.panelMainMenu.TabIndex = 1;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.btnHome);
-            this.panel1.Controls.Add(this.iconPictureBox2);
             this.panel1.Controls.Add(this.toggleMode);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(3, 64);
+            this.panel1.Location = new System.Drawing.Point(3, 88);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1240, 57);
+            this.panel1.Size = new System.Drawing.Size(996, 42);
             this.panel1.TabIndex = 0;
-            // 
-            // btnHome
-            // 
-            this.btnHome.BackColor = System.Drawing.Color.Transparent;
-            this.btnHome.FlatAppearance.BorderSize = 0;
-            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHome.IconChar = FontAwesome.Sharp.IconChar.HomeLg;
-            this.btnHome.IconColor = System.Drawing.Color.Black;
-            this.btnHome.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnHome.Location = new System.Drawing.Point(3, 2);
-            this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(48, 48);
-            this.btnHome.TabIndex = 9;
-            this.btnHome.UseVisualStyleBackColor = false;
-            this.btnHome.Click += new System.EventHandler(this.btnHome_Click);
-            // 
-            // iconPictureBox2
-            // 
-            this.iconPictureBox2.BackColor = System.Drawing.SystemColors.Control;
-            this.iconPictureBox2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.Moon;
-            this.iconPictureBox2.IconColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox2.Location = new System.Drawing.Point(1096, 14);
-            this.iconPictureBox2.Name = "iconPictureBox2";
-            this.iconPictureBox2.Size = new System.Drawing.Size(32, 32);
-            this.iconPictureBox2.TabIndex = 8;
-            this.iconPictureBox2.TabStop = false;
             // 
             // toggleMode
             // 
             this.toggleMode.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.toggleMode.AutoSize = true;
+            this.toggleMode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
+            this.toggleMode.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.toggleMode.Depth = 0;
-            this.toggleMode.Location = new System.Drawing.Point(1151, 9);
+            this.toggleMode.ForeColor = System.Drawing.Color.Transparent;
+            this.toggleMode.Location = new System.Drawing.Point(929, 5);
             this.toggleMode.Margin = new System.Windows.Forms.Padding(0);
             this.toggleMode.MouseLocation = new System.Drawing.Point(-1, -1);
             this.toggleMode.MouseState = MaterialSkin.MouseState.HOVER;
@@ -94,78 +71,70 @@
             this.toggleMode.Ripple = true;
             this.toggleMode.Size = new System.Drawing.Size(58, 37);
             this.toggleMode.TabIndex = 7;
-            this.toggleMode.UseVisualStyleBackColor = true;
+            this.toggleMode.UseVisualStyleBackColor = false;
             this.toggleMode.CheckedChanged += new System.EventHandler(this.toggleMode_CheckedChanged);
             // 
-            // panel4
+            // menuStrip1
             // 
-            this.panel4.Controls.Add(this.btnUsuarios);
-            this.panel4.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel4.Location = new System.Drawing.Point(0, 0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(162, 582);
-            this.panel4.TabIndex = 0;
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.empleadosToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(3, 64);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(996, 24);
+            this.menuStrip1.TabIndex = 2;
+            this.menuStrip1.Text = "menuStrip1";
             // 
-            // btnUsuarios
+            // empleadosToolStripMenuItem
             // 
-            this.btnUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUsuarios.IconChar = FontAwesome.Sharp.IconChar.None;
-            this.btnUsuarios.IconColor = System.Drawing.Color.Black;
-            this.btnUsuarios.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnUsuarios.Location = new System.Drawing.Point(3, 58);
-            this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(132, 51);
-            this.btnUsuarios.TabIndex = 0;
-            this.btnUsuarios.Text = "Empleados";
-            this.btnUsuarios.UseVisualStyleBackColor = true;
-            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
+            this.empleadosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnConsultarEmpleados});
+            this.empleadosToolStripMenuItem.Name = "empleadosToolStripMenuItem";
+            this.empleadosToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
+            this.empleadosToolStripMenuItem.Text = "Empleados";
             // 
-            // panelMainMenu
+            // btnConsultarEmpleados
             // 
-            this.panelMainMenu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMainMenu.Location = new System.Drawing.Point(162, 0);
-            this.panelMainMenu.Name = "panelMainMenu";
-            this.panelMainMenu.Size = new System.Drawing.Size(1078, 582);
-            this.panelMainMenu.TabIndex = 1;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.panelMainMenu);
-            this.panel2.Controls.Add(this.panel4);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 121);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1240, 582);
-            this.panel2.TabIndex = 1;
+            this.btnConsultarEmpleados.IconChar = FontAwesome.Sharp.IconChar.UserAlt;
+            this.btnConsultarEmpleados.IconColor = System.Drawing.Color.Black;
+            this.btnConsultarEmpleados.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnConsultarEmpleados.Name = "btnConsultarEmpleados";
+            this.btnConsultarEmpleados.Size = new System.Drawing.Size(186, 22);
+            this.btnConsultarEmpleados.Text = "Consultar Empleados";
+            this.btnConsultarEmpleados.Click += new System.EventHandler(this.btnConsultarEmpleados_Click);
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1246, 706);
-            this.Controls.Add(this.panel2);
+            this.ClientSize = new System.Drawing.Size(1002, 706);
+            this.Controls.Add(this.panelMainMenu);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "MainWindow";
-            this.Text = "Administracion";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Bienvenido";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainWindow_FormClosed);
+            this.Load += new System.EventHandler(this.MainWindow_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
-        private MaterialSkin.Controls.MaterialSwitch toggleMode;
-        private FontAwesome.Sharp.IconButton btnHome;
-        private System.Windows.Forms.Panel panel4;
-        private FontAwesome.Sharp.IconButton btnUsuarios;
         private System.Windows.Forms.Panel panelMainMenu;
-        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel1;
+        private MaterialSkin.Controls.MaterialSwitch toggleMode;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem empleadosToolStripMenuItem;
+        private FontAwesome.Sharp.IconMenuItem btnConsultarEmpleados;
     }
 }
 

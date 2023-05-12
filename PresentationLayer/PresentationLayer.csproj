@@ -57,11 +57,11 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Formularios\GestionUsuarios\frmCrearUsuario.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="Formularios\GestionUsuarios\frmAsignarUsuario.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\GestionUsuarios\frmCrearUsuario.Designer.cs">
-      <DependentUpon>frmCrearUsuario.cs</DependentUpon>
+    <Compile Include="Formularios\GestionUsuarios\frmAsignarUsuario.Designer.cs">
+      <DependentUpon>frmAsignarUsuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\GestionUsuarios\frmGestionUsuario.cs">
       <SubType>Form</SubType>
@@ -83,8 +83,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Formularios\GestionUsuarios\frmCrearUsuario.resx">
-      <DependentUpon>frmCrearUsuario.cs</DependentUpon>
+    <EmbeddedResource Include="Formularios\GestionUsuarios\frmAsignarUsuario.resx">
+      <DependentUpon>frmAsignarUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\GestionUsuarios\frmGestionUsuario.resx">
       <DependentUpon>frmGestionUsuario.cs</DependentUpon>

@@ -42,12 +42,12 @@
             this.btnModificarUsuario.Depth = 0;
             this.btnModificarUsuario.HighEmphasis = true;
             this.btnModificarUsuario.Icon = null;
-            this.btnModificarUsuario.Location = new System.Drawing.Point(33, 374);
+            this.btnModificarUsuario.Location = new System.Drawing.Point(20, 384);
             this.btnModificarUsuario.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnModificarUsuario.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnModificarUsuario.Name = "btnModificarUsuario";
             this.btnModificarUsuario.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnModificarUsuario.Size = new System.Drawing.Size(55, 47);
+            this.btnModificarUsuario.Size = new System.Drawing.Size(194, 47);
             this.btnModificarUsuario.TabIndex = 5;
             this.btnModificarUsuario.Text = "Modificar usuario";
             this.btnModificarUsuario.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
@@ -62,7 +62,7 @@
             this.btnAsignarCredenciales.Depth = 0;
             this.btnAsignarCredenciales.HighEmphasis = true;
             this.btnAsignarCredenciales.Icon = null;
-            this.btnAsignarCredenciales.Location = new System.Drawing.Point(553, 374);
+            this.btnAsignarCredenciales.Location = new System.Drawing.Point(527, 384);
             this.btnAsignarCredenciales.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnAsignarCredenciales.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAsignarCredenciales.Name = "btnAsignarCredenciales";
@@ -73,27 +73,37 @@
             this.btnAsignarCredenciales.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
             this.btnAsignarCredenciales.UseAccentColor = false;
             this.btnAsignarCredenciales.UseVisualStyleBackColor = true;
+            this.btnAsignarCredenciales.Click += new System.EventHandler(this.btnAsignarCredenciales_Click);
             // 
             // dgvEmpleados
             // 
             this.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvEmpleados.Location = new System.Drawing.Point(33, 12);
+            this.dgvEmpleados.Location = new System.Drawing.Point(20, 27);
             this.dgvEmpleados.Name = "dgvEmpleados";
             this.dgvEmpleados.Size = new System.Drawing.Size(692, 326);
             this.dgvEmpleados.TabIndex = 3;
+            this.dgvEmpleados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleados_CellContentClick);
+            this.dgvEmpleados.SelectionChanged += new System.EventHandler(this.dgvEmpleados_SelectionChanged);
             // 
             // frmGestionUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(751, 425);
+            this.ClientSize = new System.Drawing.Size(738, 474);
             this.ControlBox = false;
             this.Controls.Add(this.btnModificarUsuario);
             this.Controls.Add(this.btnAsignarCredenciales);
             this.Controls.Add(this.dgvEmpleados);
+            this.FormStyle = MaterialSkin.Controls.MaterialForm.FormStyles.ActionBar_None;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmGestionUsuario";
-            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
+            this.Padding = new System.Windows.Forms.Padding(3, 24, 3, 3);
+            this.ShowIcon = false;
+            this.ShowInTaskbar = false;
+            this.Sizable = false;
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Hide;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "frmGestionUsuario";
             this.Load += new System.EventHandler(this.frmGestionUsuario_Load);
