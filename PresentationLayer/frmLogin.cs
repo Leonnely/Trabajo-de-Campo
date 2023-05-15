@@ -1,4 +1,5 @@
 ﻿using MaterialSkin.Controls;
+using SecurityLayer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -39,6 +40,41 @@ namespace PresentationLayer
             }
         }
 
-        
+        private void btnIniciarSesion_Click(object sender, EventArgs e)
+        {
+            LoginController loginController = new LoginController();
+            string identificador = txtIdentificador.Text;
+            string password = txtPassword.Text;
+
+            if (loginController.Login(identificador,password))
+            {
+                //Ya realizo la logica de sesion
+
+                loginController = null;
+                MainWindow mainWindow = new MainWindow();
+                this.Hide();
+                mainWindow.ShowDialog();
+
+                txtIdentificador.Clear();
+                txtPassword.Clear();
+                this.Show();
+            }
+            else
+            {
+                loginController.restarIntento();
+                if (loginController.Intentos == 0)
+                {
+                    loginController.BlockUsuario(identificador);
+                }
+                MessageBox.Show("Correo/Usuario o Contraseña incorrectos");
+            }
+            
+        }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+            txtIdentificador.Text = "CaRo55";
+            txtPassword.Text = "5555555555";
+        }
     }
 }

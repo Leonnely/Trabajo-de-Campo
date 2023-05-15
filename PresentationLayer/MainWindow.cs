@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using PresentationLayer.Formularios.GestionUsuarios;
 using BusinessLogicLayer;
+using SecurityLayer;
 
 namespace PresentationLayer
 {
@@ -23,42 +24,20 @@ namespace PresentationLayer
             InitializeComponent();
             materialSkinManager = MaterialSkinManager.Instance;
             materialSkinManager.EnforceBackcolorOnAllComponents = true;
-            materialSkinManager.AddFormToManage(this);
+            //materialSkinManager.AddFormToManage(this);
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.Indigo500, Primary.Indigo700, Primary.Indigo100, Accent.Pink200, TextShade.WHITE);
 
-            Application.Exit();
+            //Application.Exit();
         }
 
-        private void toggleMode_CheckedChanged(object sender, EventArgs e)
-        {
-            if (toggleMode.Checked)
-            {
-                materialSkinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.DARK;
-            }
-            else
-            {
-                materialSkinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.LIGHT;
-
-            }
-        }
-
-        private void btnHome_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnUsuarios_Click(object sender, EventArgs e)
-        {
-            
-        }
 
 
         private void ShowChildFormInContainer(Form childForm, Panel containerPanel)
         {
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Location = new Point(0, 0);
+            //childForm.Location = new Point(0, 0);
             containerPanel.Controls.Clear();
             containerPanel.Controls.Add(childForm);
             childForm.Show();
@@ -66,7 +45,33 @@ namespace PresentationLayer
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
+            lblDia.Text = DateTime.Today.ToString("dddd") + " " + DateTime.Today.ToString("M");
+            string formattedDateTime = DateTime.Now.ToString("HH:mm:ss");
 
+            
+            Timer timer = new Timer();
+            timer.Interval = 1000; // 1000 ms = 1 segundo
+            timer.Tick += Timer_Tick;
+            timer.Start();
+
+            
+        }
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            // Formatear la fecha y hora actual en el formato deseado
+            string formattedDateTime = DateTime.Now.ToString("HH:mm:ss");
+
+            // Actualizar el texto del reloj con el formato personalizado
+            lblReloj.Text = formattedDateTime;
+            CenterControl(lblDia);
+            CenterControl(lblReloj);
+        }
+
+        private void CenterControl(Control control)
+        {
+            int x = (this.ClientSize.Width - control.Width) / 2;
+            control.Location = new Point(x,control.Location.Y);
         }
 
         private void MainWindow_FormClosed(object sender, FormClosedEventArgs e)
@@ -78,6 +83,13 @@ namespace PresentationLayer
         {
             Form frmGestionUsuario = new frmGestionUsuario();
             ShowChildFormInContainer(frmGestionUsuario, panelMainMenu);
+        }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            SessionManager.Disconnect();
+            this.Close();
+            //Application.Exit();
         }
     }
 }

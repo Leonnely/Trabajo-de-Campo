@@ -12,7 +12,6 @@ namespace DataAccessLayer.Modelos
     public class UsuarioDAL : IRepository<Usuario>
     {
         SqlConnection oConnection;
-
         public UsuarioDAL() 
         {
             oConnection = new SqlConnection(Connection.GetConnectionString());
@@ -68,9 +67,25 @@ namespace DataAccessLayer.Modelos
             throw new NotImplementedException();
         }
 
-        public Usuario ObtenerPorId(int id)
+        public Usuario ObtenerPorId(int codEMP)
         {
-            throw new NotImplementedException();
+            Usuario usuario = new Usuario();
+
+            string query = "SELECT * FROM Usuario WHERE codEMP = @codEMP";
+            oConnection.Open();
+            SqlCommand cmd = new SqlCommand(query, oConnection);
+            cmd.Parameters.AddWithValue("@codEMP", codEMP);
+            SqlDataReader reader = cmd.ExecuteReader();
+            if (reader.Read()) 
+            {
+                usuario.NombreUsuario = (string)reader["NombreUsuario"];
+                usuario.EstadoCuenta = (string)reader["EstadoCuenta"];
+                usuario.codEMP = (int)reader["codEMP"];
+                usuario.FechaCreacion = (DateTime)reader["FechaCreacion"];
+                usuario.Password = (string)reader["Password"];
+            }
+            oConnection.Close();
+            return usuario;
         }
 
         public List<Usuario> ObtenerTodos()

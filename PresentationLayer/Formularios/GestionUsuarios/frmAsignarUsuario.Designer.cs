@@ -38,6 +38,7 @@
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             this.txtCorreo = new MaterialSkin.Controls.MaterialTextBox();
             this.SwitchPassword = new MaterialSkin.Controls.MaterialSwitch();
+            this.materialProgressBar1 = new MaterialSkin.Controls.MaterialProgressBar();
             this.SuspendLayout();
             // 
             // btnConfirmarUsuario
@@ -200,12 +201,24 @@
             this.SwitchPassword.UseVisualStyleBackColor = true;
             this.SwitchPassword.CheckedChanged += new System.EventHandler(this.SwitchPassword_CheckedChanged);
             // 
+            // materialProgressBar1
+            // 
+            this.materialProgressBar1.Depth = 0;
+            this.materialProgressBar1.Location = new System.Drawing.Point(203, 387);
+            this.materialProgressBar1.MarqueeAnimationSpeed = 1000;
+            this.materialProgressBar1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialProgressBar1.Name = "materialProgressBar1";
+            this.materialProgressBar1.Size = new System.Drawing.Size(276, 5);
+            this.materialProgressBar1.Step = 1;
+            this.materialProgressBar1.TabIndex = 24;
+            // 
             // frmAsignarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(648, 437);
             this.ControlBox = false;
+            this.Controls.Add(this.materialProgressBar1);
             this.Controls.Add(this.SwitchPassword);
             this.Controls.Add(this.btnConfirmarUsuario);
             this.Controls.Add(this.materialLabel4);
@@ -237,5 +250,6 @@
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
         private MaterialSkin.Controls.MaterialTextBox txtCorreo;
         private MaterialSkin.Controls.MaterialSwitch SwitchPassword;
+        private MaterialSkin.Controls.MaterialProgressBar materialProgressBar1;
     }
 }

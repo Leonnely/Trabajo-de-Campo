@@ -72,6 +72,41 @@ namespace DataAccessLayer.Modelos
             throw new NotImplementedException();
         }
 
+        public Empleado ObtenerPorUsuario(string username)
+        {
+            string query = "SELECT * FROM Empleado WHERE NombreUsuario = @NombreUsuario";
+
+            oConnection.Open();
+            SqlCommand cmd = new SqlCommand(query, oConnection);
+            cmd.Parameters.AddWithValue("@NombreUsuario", username);
+            SqlDataReader reader = cmd.ExecuteReader();
+
+            Empleado emp = new Empleado();
+            while (reader.Read())
+            {
+                DateTime FechaIngreso;
+
+                emp.codEMP = (int)reader["codEMP"];
+                emp.Nombre = (string)reader["Nombre"];
+                emp.Apellido = (string)reader["Apellido"];
+                emp.Correo = (string)reader["Correo"];
+                emp.DireccionHogar = (string)reader["DireccionHogar"];
+                emp.Telefono = (string)reader["Telefono"];
+                emp.EstadoEmpleado = (string)reader["EstadoEmpleado"];
+                if (DateTime.TryParse(reader["FechaIngreso"].ToString(), out FechaIngreso))
+                {
+                    emp.FechaIngreso = FechaIngreso;
+                }
+
+                if (reader.IsDBNull(4) == false)
+                {
+                    emp.NombreUsuario = (string)reader["NombreUsuario"];
+                }
+            }
+            oConnection.Close();
+            return emp;
+        }
+
         public List<Empleado> ObtenerTodos()
         {
             List<Empleado> miLista = new List<Empleado>();

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BusinessEntity;
+using DataAccessLayer.Modelos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography.X509Certificates;
@@ -12,9 +14,11 @@ namespace SecurityLayer
 		public LoginController()
 		{
 			_intentos = 3;
+
 		}
 
 		private int _intentos;
+		private int id;
 
 		public int Intentos
 		{
@@ -24,24 +28,16 @@ namespace SecurityLayer
 
 		public bool Login(string username, string password)
 		{
-			
-			//TODO: Validar correo y contraseña en BBDD
-			if (true)
+			Credenciales credenciales = new Credenciales();
+			if (credenciales.getCredenciales(username, password))
 			{
-				
-
-				SessionManager mySession = SessionManager.getInstance();
-				resetIntento();
-				
+				SessionManager.Connect(username);
 				return true;
 			}
 			else
 			{
-
 				return false;
 			}
-			
-			
 		}
 
 		public void BlockUsuario(string correo)

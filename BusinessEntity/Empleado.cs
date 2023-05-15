@@ -8,6 +8,12 @@ namespace BusinessEntity
 {
     public class Empleado
     {
+        public Usuario usuario;
+
+        public Empleado() 
+        {
+            Usuario usuario = null;
+        }
      
         public int codEMP { get; set; }
 

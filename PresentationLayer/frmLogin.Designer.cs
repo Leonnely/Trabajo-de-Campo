@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.materialTextBox21 = new MaterialSkin.Controls.MaterialTextBox2();
-            this.materialTextBox22 = new MaterialSkin.Controls.MaterialTextBox2();
-            this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
+            this.txtIdentificador = new MaterialSkin.Controls.MaterialTextBox2();
+            this.txtPassword = new MaterialSkin.Controls.MaterialTextBox2();
+            this.btnIniciarSesion = new MaterialSkin.Controls.MaterialButton();
             this.toggleMode = new MaterialSkin.Controls.MaterialSwitch();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
@@ -40,86 +40,87 @@
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
-            // materialTextBox21
+            // txtIdentificador
             // 
-            this.materialTextBox21.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.materialTextBox21.AnimateReadOnly = false;
-            this.materialTextBox21.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.materialTextBox21.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.materialTextBox21.Depth = 0;
-            this.materialTextBox21.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox21.HideSelection = true;
-            this.materialTextBox21.Hint = "Correo";
-            this.materialTextBox21.LeadingIcon = null;
-            this.materialTextBox21.Location = new System.Drawing.Point(75, 312);
-            this.materialTextBox21.MaxLength = 32767;
-            this.materialTextBox21.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox21.Name = "materialTextBox21";
-            this.materialTextBox21.PasswordChar = '\0';
-            this.materialTextBox21.PrefixSuffixText = null;
-            this.materialTextBox21.ReadOnly = false;
-            this.materialTextBox21.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.materialTextBox21.SelectedText = "";
-            this.materialTextBox21.SelectionLength = 0;
-            this.materialTextBox21.SelectionStart = 0;
-            this.materialTextBox21.ShortcutsEnabled = true;
-            this.materialTextBox21.Size = new System.Drawing.Size(250, 48);
-            this.materialTextBox21.TabIndex = 0;
-            this.materialTextBox21.TabStop = false;
-            this.materialTextBox21.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.materialTextBox21.TrailingIcon = null;
-            this.materialTextBox21.UseSystemPasswordChar = false;
+            this.txtIdentificador.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtIdentificador.AnimateReadOnly = false;
+            this.txtIdentificador.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txtIdentificador.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtIdentificador.Depth = 0;
+            this.txtIdentificador.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtIdentificador.HideSelection = true;
+            this.txtIdentificador.Hint = "Correo";
+            this.txtIdentificador.LeadingIcon = null;
+            this.txtIdentificador.Location = new System.Drawing.Point(75, 312);
+            this.txtIdentificador.MaxLength = 32767;
+            this.txtIdentificador.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtIdentificador.Name = "txtIdentificador";
+            this.txtIdentificador.PasswordChar = '\0';
+            this.txtIdentificador.PrefixSuffixText = null;
+            this.txtIdentificador.ReadOnly = false;
+            this.txtIdentificador.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtIdentificador.SelectedText = "";
+            this.txtIdentificador.SelectionLength = 0;
+            this.txtIdentificador.SelectionStart = 0;
+            this.txtIdentificador.ShortcutsEnabled = true;
+            this.txtIdentificador.Size = new System.Drawing.Size(250, 48);
+            this.txtIdentificador.TabIndex = 0;
+            this.txtIdentificador.TabStop = false;
+            this.txtIdentificador.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtIdentificador.TrailingIcon = null;
+            this.txtIdentificador.UseSystemPasswordChar = false;
             // 
-            // materialTextBox22
+            // txtPassword
             // 
-            this.materialTextBox22.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.materialTextBox22.AnimateReadOnly = false;
-            this.materialTextBox22.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.materialTextBox22.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
-            this.materialTextBox22.Depth = 0;
-            this.materialTextBox22.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialTextBox22.HideSelection = true;
-            this.materialTextBox22.Hint = "Contraseña";
-            this.materialTextBox22.LeadingIcon = null;
-            this.materialTextBox22.Location = new System.Drawing.Point(75, 377);
-            this.materialTextBox22.MaxLength = 32767;
-            this.materialTextBox22.MouseState = MaterialSkin.MouseState.OUT;
-            this.materialTextBox22.Name = "materialTextBox22";
-            this.materialTextBox22.PasswordChar = '\0';
-            this.materialTextBox22.PrefixSuffixText = null;
-            this.materialTextBox22.ReadOnly = false;
-            this.materialTextBox22.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.materialTextBox22.SelectedText = "";
-            this.materialTextBox22.SelectionLength = 0;
-            this.materialTextBox22.SelectionStart = 0;
-            this.materialTextBox22.ShortcutsEnabled = true;
-            this.materialTextBox22.Size = new System.Drawing.Size(250, 48);
-            this.materialTextBox22.TabIndex = 1;
-            this.materialTextBox22.TabStop = false;
-            this.materialTextBox22.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.materialTextBox22.TrailingIcon = null;
-            this.materialTextBox22.UseSystemPasswordChar = false;
+            this.txtPassword.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txtPassword.AnimateReadOnly = false;
+            this.txtPassword.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.txtPassword.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtPassword.Depth = 0;
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.txtPassword.HideSelection = true;
+            this.txtPassword.Hint = "Contraseña";
+            this.txtPassword.LeadingIcon = null;
+            this.txtPassword.Location = new System.Drawing.Point(75, 377);
+            this.txtPassword.MaxLength = 32767;
+            this.txtPassword.MouseState = MaterialSkin.MouseState.OUT;
+            this.txtPassword.Name = "txtPassword";
+            this.txtPassword.PasswordChar = '\0';
+            this.txtPassword.PrefixSuffixText = null;
+            this.txtPassword.ReadOnly = false;
+            this.txtPassword.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.txtPassword.SelectedText = "";
+            this.txtPassword.SelectionLength = 0;
+            this.txtPassword.SelectionStart = 0;
+            this.txtPassword.ShortcutsEnabled = true;
+            this.txtPassword.Size = new System.Drawing.Size(250, 48);
+            this.txtPassword.TabIndex = 1;
+            this.txtPassword.TabStop = false;
+            this.txtPassword.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtPassword.TrailingIcon = null;
+            this.txtPassword.UseSystemPasswordChar = false;
             // 
-            // materialButton1
+            // btnIniciarSesion
             // 
-            this.materialButton1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.materialButton1.AutoSize = false;
-            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.materialButton1.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.materialButton1.Depth = 0;
-            this.materialButton1.HighEmphasis = true;
-            this.materialButton1.Icon = null;
-            this.materialButton1.Location = new System.Drawing.Point(75, 452);
-            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialButton1.Name = "materialButton1";
-            this.materialButton1.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.materialButton1.Size = new System.Drawing.Size(250, 36);
-            this.materialButton1.TabIndex = 3;
-            this.materialButton1.Text = "Iniciar sesión";
-            this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.materialButton1.UseAccentColor = false;
-            this.materialButton1.UseVisualStyleBackColor = true;
+            this.btnIniciarSesion.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnIniciarSesion.AutoSize = false;
+            this.btnIniciarSesion.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnIniciarSesion.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
+            this.btnIniciarSesion.Depth = 0;
+            this.btnIniciarSesion.HighEmphasis = true;
+            this.btnIniciarSesion.Icon = null;
+            this.btnIniciarSesion.Location = new System.Drawing.Point(75, 452);
+            this.btnIniciarSesion.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnIniciarSesion.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnIniciarSesion.Name = "btnIniciarSesion";
+            this.btnIniciarSesion.NoAccentTextColor = System.Drawing.Color.Empty;
+            this.btnIniciarSesion.Size = new System.Drawing.Size(250, 36);
+            this.btnIniciarSesion.TabIndex = 3;
+            this.btnIniciarSesion.Text = "Iniciar sesión";
+            this.btnIniciarSesion.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.btnIniciarSesion.UseAccentColor = false;
+            this.btnIniciarSesion.UseVisualStyleBackColor = true;
+            this.btnIniciarSesion.Click += new System.EventHandler(this.btnIniciarSesion_Click);
             // 
             // toggleMode
             // 
@@ -200,11 +201,13 @@
             this.Controls.Add(this.iconPictureBox2);
             this.Controls.Add(this.iconPictureBox1);
             this.Controls.Add(this.toggleMode);
-            this.Controls.Add(this.materialButton1);
-            this.Controls.Add(this.materialTextBox22);
-            this.Controls.Add(this.materialTextBox21);
+            this.Controls.Add(this.btnIniciarSesion);
+            this.Controls.Add(this.txtPassword);
+            this.Controls.Add(this.txtIdentificador);
             this.Name = "frmLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Gestión Tristán Suarez";
+            this.Load += new System.EventHandler(this.frmLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
             this.ResumeLayout(false);
@@ -214,9 +217,9 @@
 
         #endregion
 
-        private MaterialSkin.Controls.MaterialTextBox2 materialTextBox21;
-        private MaterialSkin.Controls.MaterialTextBox2 materialTextBox22;
-        private MaterialSkin.Controls.MaterialButton materialButton1;
+        private MaterialSkin.Controls.MaterialTextBox2 txtIdentificador;
+        private MaterialSkin.Controls.MaterialTextBox2 txtPassword;
+        private MaterialSkin.Controls.MaterialButton btnIniciarSesion;
         private MaterialSkin.Controls.MaterialSwitch toggleMode;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox2;

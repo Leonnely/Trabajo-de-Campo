@@ -29,67 +29,108 @@
         private void InitializeComponent()
         {
             this.panelMainMenu = new System.Windows.Forms.Panel();
+            this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
+            this.lblDia = new MaterialSkin.Controls.MaterialLabel();
+            this.lblReloj = new MaterialSkin.Controls.MaterialLabel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.toggleMode = new MaterialSkin.Controls.MaterialSwitch();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.empleadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnConsultarEmpleados = new FontAwesome.Sharp.IconMenuItem();
-            this.panel1.SuspendLayout();
+            this.configuracionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.usuarioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.btnPerfil = new FontAwesome.Sharp.IconMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.btnCerrarSesion = new FontAwesome.Sharp.IconMenuItem();
+            this.panelMainMenu.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMainMenu
             // 
+            this.panelMainMenu.Controls.Add(this.materialDivider1);
+            this.panelMainMenu.Controls.Add(this.lblDia);
+            this.panelMainMenu.Controls.Add(this.lblReloj);
             this.panelMainMenu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelMainMenu.Location = new System.Drawing.Point(3, 130);
+            this.panelMainMenu.Location = new System.Drawing.Point(3, 118);
             this.panelMainMenu.Name = "panelMainMenu";
-            this.panelMainMenu.Size = new System.Drawing.Size(996, 573);
+            this.panelMainMenu.Size = new System.Drawing.Size(996, 585);
             this.panelMainMenu.TabIndex = 1;
+            // 
+            // materialDivider1
+            // 
+            this.materialDivider1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
+            this.materialDivider1.Depth = 0;
+            this.materialDivider1.Location = new System.Drawing.Point(214, 302);
+            this.materialDivider1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialDivider1.Name = "materialDivider1";
+            this.materialDivider1.Size = new System.Drawing.Size(574, 10);
+            this.materialDivider1.TabIndex = 2;
+            this.materialDivider1.Text = "materialDivider1";
+            // 
+            // lblDia
+            // 
+            this.lblDia.AutoSize = true;
+            this.lblDia.Depth = 0;
+            this.lblDia.Font = new System.Drawing.Font("Roboto Light", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.lblDia.FontType = MaterialSkin.MaterialSkinManager.fontType.H2;
+            this.lblDia.Location = new System.Drawing.Point(244, 119);
+            this.lblDia.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblDia.Name = "lblDia";
+            this.lblDia.Size = new System.Drawing.Size(482, 72);
+            this.lblDia.TabIndex = 1;
+            this.lblDia.Text = "Lunes 14 de Mayo";
+            // 
+            // lblReloj
+            // 
+            this.lblReloj.AutoSize = true;
+            this.lblReloj.Depth = 0;
+            this.lblReloj.Font = new System.Drawing.Font("Roboto Light", 60F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            this.lblReloj.FontType = MaterialSkin.MaterialSkinManager.fontType.H2;
+            this.lblReloj.Location = new System.Drawing.Point(412, 191);
+            this.lblReloj.MouseState = MaterialSkin.MouseState.HOVER;
+            this.lblReloj.Name = "lblReloj";
+            this.lblReloj.Size = new System.Drawing.Size(146, 72);
+            this.lblReloj.TabIndex = 0;
+            this.lblReloj.Text = "15:34";
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.toggleMode);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(3, 88);
+            this.panel1.Location = new System.Drawing.Point(3, 93);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(996, 42);
+            this.panel1.Size = new System.Drawing.Size(996, 25);
             this.panel1.TabIndex = 0;
-            // 
-            // toggleMode
-            // 
-            this.toggleMode.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.toggleMode.AutoSize = true;
-            this.toggleMode.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(63)))), ((int)(((byte)(81)))), ((int)(((byte)(181)))));
-            this.toggleMode.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.toggleMode.Depth = 0;
-            this.toggleMode.ForeColor = System.Drawing.Color.Transparent;
-            this.toggleMode.Location = new System.Drawing.Point(929, 5);
-            this.toggleMode.Margin = new System.Windows.Forms.Padding(0);
-            this.toggleMode.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.toggleMode.MouseState = MaterialSkin.MouseState.HOVER;
-            this.toggleMode.Name = "toggleMode";
-            this.toggleMode.Ripple = true;
-            this.toggleMode.Size = new System.Drawing.Size(58, 37);
-            this.toggleMode.TabIndex = 7;
-            this.toggleMode.UseVisualStyleBackColor = false;
-            this.toggleMode.CheckedChanged += new System.EventHandler(this.toggleMode_CheckedChanged);
             // 
             // menuStrip1
             // 
+            this.menuStrip1.BackColor = System.Drawing.Color.Gainsboro;
+            this.menuStrip1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.menuStrip1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.menuStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.empleadosToolStripMenuItem});
+            this.homeToolStripMenuItem,
+            this.empleadosToolStripMenuItem,
+            this.configuracionToolStripMenuItem,
+            this.usuarioToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(3, 64);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(996, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(996, 29);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
+            // 
+            // homeToolStripMenuItem
+            // 
+            this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
+            this.homeToolStripMenuItem.Size = new System.Drawing.Size(64, 25);
+            this.homeToolStripMenuItem.Text = "Home";
             // 
             // empleadosToolStripMenuItem
             // 
             this.empleadosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnConsultarEmpleados});
             this.empleadosToolStripMenuItem.Name = "empleadosToolStripMenuItem";
-            this.empleadosToolStripMenuItem.Size = new System.Drawing.Size(77, 20);
+            this.empleadosToolStripMenuItem.Size = new System.Drawing.Size(98, 25);
             this.empleadosToolStripMenuItem.Text = "Empleados";
             // 
             // btnConsultarEmpleados
@@ -98,9 +139,51 @@
             this.btnConsultarEmpleados.IconColor = System.Drawing.Color.Black;
             this.btnConsultarEmpleados.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnConsultarEmpleados.Name = "btnConsultarEmpleados";
-            this.btnConsultarEmpleados.Size = new System.Drawing.Size(186, 22);
+            this.btnConsultarEmpleados.Size = new System.Drawing.Size(227, 26);
             this.btnConsultarEmpleados.Text = "Consultar Empleados";
             this.btnConsultarEmpleados.Click += new System.EventHandler(this.btnConsultarEmpleados_Click);
+            // 
+            // configuracionToolStripMenuItem
+            // 
+            this.configuracionToolStripMenuItem.Name = "configuracionToolStripMenuItem";
+            this.configuracionToolStripMenuItem.Size = new System.Drawing.Size(120, 25);
+            this.configuracionToolStripMenuItem.Text = "Configuracion";
+            // 
+            // usuarioToolStripMenuItem
+            // 
+            this.usuarioToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.btnPerfil,
+            this.toolStripSeparator1,
+            this.btnCerrarSesion});
+            this.usuarioToolStripMenuItem.Name = "usuarioToolStripMenuItem";
+            this.usuarioToolStripMenuItem.Size = new System.Drawing.Size(68, 25);
+            this.usuarioToolStripMenuItem.Text = "Sesión";
+            // 
+            // btnPerfil
+            // 
+            this.btnPerfil.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPerfil.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.btnPerfil.IconColor = System.Drawing.Color.Black;
+            this.btnPerfil.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnPerfil.Name = "btnPerfil";
+            this.btnPerfil.Size = new System.Drawing.Size(180, 24);
+            this.btnPerfil.Text = "Mi Perfil";
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            // 
+            // btnCerrarSesion
+            // 
+            this.btnCerrarSesion.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrarSesion.IconChar = FontAwesome.Sharp.IconChar.PowerOff;
+            this.btnCerrarSesion.IconColor = System.Drawing.Color.Black;
+            this.btnCerrarSesion.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnCerrarSesion.Name = "btnCerrarSesion";
+            this.btnCerrarSesion.Size = new System.Drawing.Size(180, 24);
+            this.btnCerrarSesion.Text = "Cerrar Sesión";
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
             // 
             // MainWindow
             // 
@@ -118,8 +201,8 @@
             this.Text = "Bienvenido";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MainWindow_FormClosed);
             this.Load += new System.EventHandler(this.MainWindow_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.panelMainMenu.ResumeLayout(false);
+            this.panelMainMenu.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -131,10 +214,18 @@
 
         private System.Windows.Forms.Panel panelMainMenu;
         private System.Windows.Forms.Panel panel1;
-        private MaterialSkin.Controls.MaterialSwitch toggleMode;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem empleadosToolStripMenuItem;
         private FontAwesome.Sharp.IconMenuItem btnConsultarEmpleados;
+        private System.Windows.Forms.ToolStripMenuItem configuracionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem usuarioToolStripMenuItem;
+        private FontAwesome.Sharp.IconMenuItem btnPerfil;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private FontAwesome.Sharp.IconMenuItem btnCerrarSesion;
+        private MaterialSkin.Controls.MaterialLabel lblReloj;
+        private MaterialSkin.Controls.MaterialLabel lblDia;
+        private MaterialSkin.Controls.MaterialDivider materialDivider1;
+        private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem;
     }
 }
 

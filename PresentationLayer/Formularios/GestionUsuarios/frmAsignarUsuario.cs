@@ -38,6 +38,9 @@ namespace PresentationLayer.Formularios.GestionUsuarios
 
         
 
+        private int currentValue = 0;
+        int incrementValue;
+
         private void btnConfirmarUsuario_Click(object sender, EventArgs e)
         {
             oEmpleado.NombreUsuario = txtUsuario.Text;
@@ -54,10 +57,34 @@ namespace PresentationLayer.Formularios.GestionUsuarios
             GestorUsuario.Agregar(usuario);
             GestorEmpleado.Actualizar(oEmpleado);
 
+            materialProgressBar1.Value = 0;
+            Timer timer = new Timer();
+            timer.Interval = 20;
+            incrementValue = 100 / (2000 / timer.Interval);
+            timer.Tick += Timer_Tick;
+            timer.Start();
+        }
+
+
+        private void Timer_Tick(object sender, EventArgs e)
+        {
+            // Incrementar el valor de la barra de progreso
+            currentValue += incrementValue;
+            materialProgressBar1.Value = currentValue;
+
+            // Verificar si se alcanzó el valor máximo (100)
+            if (currentValue >= 100)
+            {
+                // Detener el temporizador
+                Timer timer = (Timer)sender;
+                timer.Stop();
+            }
         }
 
         private void frmAsignarUsuario_Load(object sender, EventArgs e)
         {
+
+           
             txtUsuario.Text = GestorEmpleado.CrearNombreUsuario(oEmpleado);
             //TODO: Buscar si existe ese usuario
             txtCorreo.Text = oEmpleado.Correo;
@@ -79,12 +106,14 @@ namespace PresentationLayer.Formularios.GestionUsuarios
             if (SwitchPassword.Checked)
             {
                 txtContraseña.Password = false;
+                txtContraseña.Text = oEmpleado.Telefono;
                 txtConfirmacionContraseña.Password = false;
                 SwitchPassword.Text = "Ocultar";
             }
             else
             {
                 txtContraseña.Password = true;
+                txtContraseña.Text = txtContraseña.Text;
                 txtConfirmacionContraseña.Password = true;
                 SwitchPassword.Text = "Ver";
 
@@ -93,5 +122,7 @@ namespace PresentationLayer.Formularios.GestionUsuarios
     }
 }
 
-    
+
+
+
 
