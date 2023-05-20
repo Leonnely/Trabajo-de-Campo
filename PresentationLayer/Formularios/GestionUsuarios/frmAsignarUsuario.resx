@@ -117,4 +117,15 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="label1.Text" xml:space="preserve">
+    <value>Nota: El usuario del empleado es generado automaticamente
+ por el sistema combinando su nombre, apellido y digitos de su dni.
+
+
+La contraseña igualmente es generada automaticamente por el sistema.
+Se compone unicamente del dni del empleado. 
+
+Cualquier dato puede ser modificado. Los datos en pantalla son sugerencias!.
+</value>
+  </data>
 </root>

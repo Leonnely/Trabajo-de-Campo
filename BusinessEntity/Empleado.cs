@@ -17,8 +17,6 @@ namespace BusinessEntity
      
         public int codEMP { get; set; }
 
-        public string NombreUsuario { get; set; }
-
         public string Nombre { get; set; }
 
         public string Apellido { get; set; }
@@ -32,5 +30,9 @@ namespace BusinessEntity
         public string EstadoEmpleado { get; set; }
         
         public DateTime FechaIngreso { get; set; }
+
+        public string DNI { get; set; }
+
+        public int EsUsuario { get; set;}
     }
 }

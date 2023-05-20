@@ -85,11 +85,28 @@ namespace PresentationLayer
             ShowChildFormInContainer(frmGestionUsuario, panelMainMenu);
         }
 
+        private void btnDesbloquearUsuario_Click(object sender, EventArgs e)
+        {
+            Form frmDesbloquearUsuario = new frmDesbloquearUsuario();
+            ShowChildFormInContainer(frmDesbloquearUsuario,panelMainMenu);
+        }
+
         private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
-            SessionManager.Disconnect();
-            this.Close();
-            //Application.Exit();
+            DialogResult resultado = MessageBox.Show("Estas cerrando la sesión, ¿Deseas continuar?", "Cierre de sesión", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+           
+            if (resultado == DialogResult.OK)
+            {
+                SessionManager.Disconnect();
+                this.Close();
+            }
         }
+
+        private void empleadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }

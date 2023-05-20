@@ -23,7 +23,7 @@ namespace SecurityLayer
 
         public bool getCredenciales(string identificador,string PasswordInput)
         {
-            string query = "SELECT NombreUsuario,Password FROM Usuario WHERE NombreUsuario = @NombreUsuario";
+            string query = "SELECT NombreUsuario,Password FROM Usuarios WHERE NombreUsuario = @NombreUsuario";
 
             oConnection.Open();
             SqlCommand cmd = new SqlCommand(query,oConnection);
@@ -36,14 +36,20 @@ namespace SecurityLayer
             }
             oConnection.Close();
 
+
+
             return comparePassword(cryptoManager.HashPassword(PasswordInput), passwordHash);
         }
+
+        
 
         public bool comparePassword(string passwordInput,string passwordBD)
         {
             bool coinciden = string.Equals(passwordBD, passwordInput);
             return coinciden;
         }
+
+        
 
     }
 }

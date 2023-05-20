@@ -14,6 +14,7 @@ namespace BusinessEntity
         public string EstadoCuenta{ get; set; }
         public DateTime UltimoInicio { get; set; }
         public int codEMP { get; set; }
+        public int StateBlock { get; set; }
     }
 }
 

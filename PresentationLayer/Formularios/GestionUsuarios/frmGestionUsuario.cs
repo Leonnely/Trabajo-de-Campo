@@ -2,6 +2,7 @@
 using BusinessLogicLayer;
 using MaterialSkin;
 using MaterialSkin.Controls;
+using SecurityLayer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -31,22 +32,14 @@ namespace PresentationLayer.Formularios.GestionUsuarios
         private void frmGestionUsuario_Load(object sender, EventArgs e)
         {
             EmpleadoBLL GestorEmpleado = new EmpleadoBLL();
-            dgvEmpleados.DataSource = GestorEmpleado.ObtenerTodos();
+            dgvEmpleados.DataSource = GestorEmpleado.ObtenerTodosSinUsuarios();
             
             btnAsignarCredenciales.Enabled = false;
         }
 
         private void dgvEmpleados_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            //if (e.RowIndex >= 0) // Asegúrate de que se haya hecho clic en una fila válida
-            //{
-            //    DataGridViewRow fila = dgvEmpleados.Rows[e.RowIndex];
-            //    // Accede al objeto vinculado a la fila seleccionada
-            //    Empleado oEmpleadoSeleccionado = (Empleado)fila.DataBoundItem;
-            //    MessageBox.Show(oEmpleadoSeleccionado.Nombre);
-            //    // Ahora puedes trabajar con el objeto seleccionado como desees
-            //    // por ejemplo, mostrar sus propiedades en TextBoxes u otras acciones.
-            //}
+            
         }
 
         Empleado oEmpleadoSeleccionado;
@@ -56,14 +49,9 @@ namespace PresentationLayer.Formularios.GestionUsuarios
             {
                 DataGridViewRow fila = dgvEmpleados.SelectedRows[0];
                 oEmpleadoSeleccionado = (Empleado)fila.DataBoundItem;
-                if (oEmpleadoSeleccionado.NombreUsuario == null)
-                {
-                    btnAsignarCredenciales.Enabled = true;
-                }
-                else
-                {
-                    btnAsignarCredenciales.Enabled = false;
-                }
+                
+                btnAsignarCredenciales.Enabled = true;
+
             }
         }
 

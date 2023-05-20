@@ -31,13 +31,10 @@
             this.txtIdentificador = new MaterialSkin.Controls.MaterialTextBox2();
             this.txtPassword = new MaterialSkin.Controls.MaterialTextBox2();
             this.btnIniciarSesion = new MaterialSkin.Controls.MaterialButton();
-            this.toggleMode = new MaterialSkin.Controls.MaterialSwitch();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
-            this.iconPictureBox2 = new FontAwesome.Sharp.IconPictureBox();
             this.materialDivider1 = new MaterialSkin.Controls.MaterialDivider();
             this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).BeginInit();
             this.SuspendLayout();
             // 
             // txtIdentificador
@@ -122,22 +119,6 @@
             this.btnIniciarSesion.UseVisualStyleBackColor = true;
             this.btnIniciarSesion.Click += new System.EventHandler(this.btnIniciarSesion_Click);
             // 
-            // toggleMode
-            // 
-            this.toggleMode.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.toggleMode.AutoSize = true;
-            this.toggleMode.Depth = 0;
-            this.toggleMode.Location = new System.Drawing.Point(301, 64);
-            this.toggleMode.Margin = new System.Windows.Forms.Padding(0);
-            this.toggleMode.MouseLocation = new System.Drawing.Point(-1, -1);
-            this.toggleMode.MouseState = MaterialSkin.MouseState.HOVER;
-            this.toggleMode.Name = "toggleMode";
-            this.toggleMode.Ripple = true;
-            this.toggleMode.Size = new System.Drawing.Size(58, 37);
-            this.toggleMode.TabIndex = 4;
-            this.toggleMode.UseVisualStyleBackColor = true;
-            this.toggleMode.CheckedChanged += new System.EventHandler(this.toggleMode_CheckedChanged);
-            // 
             // iconPictureBox1
             // 
             this.iconPictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -153,19 +134,6 @@
             this.iconPictureBox1.Size = new System.Drawing.Size(150, 149);
             this.iconPictureBox1.TabIndex = 5;
             this.iconPictureBox1.TabStop = false;
-            // 
-            // iconPictureBox2
-            // 
-            this.iconPictureBox2.BackColor = System.Drawing.SystemColors.Control;
-            this.iconPictureBox2.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox2.IconChar = FontAwesome.Sharp.IconChar.Moon;
-            this.iconPictureBox2.IconColor = System.Drawing.SystemColors.ControlText;
-            this.iconPictureBox2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox2.Location = new System.Drawing.Point(362, 67);
-            this.iconPictureBox2.Name = "iconPictureBox2";
-            this.iconPictureBox2.Size = new System.Drawing.Size(32, 32);
-            this.iconPictureBox2.TabIndex = 6;
-            this.iconPictureBox2.TabStop = false;
             // 
             // materialDivider1
             // 
@@ -198,9 +166,7 @@
             this.ClientSize = new System.Drawing.Size(400, 650);
             this.Controls.Add(this.materialLabel1);
             this.Controls.Add(this.materialDivider1);
-            this.Controls.Add(this.iconPictureBox2);
             this.Controls.Add(this.iconPictureBox1);
-            this.Controls.Add(this.toggleMode);
             this.Controls.Add(this.btnIniciarSesion);
             this.Controls.Add(this.txtPassword);
             this.Controls.Add(this.txtIdentificador);
@@ -209,7 +175,6 @@
             this.Text = "Gestión Tristán Suarez";
             this.Load += new System.EventHandler(this.frmLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -220,9 +185,7 @@
         private MaterialSkin.Controls.MaterialTextBox2 txtIdentificador;
         private MaterialSkin.Controls.MaterialTextBox2 txtPassword;
         private MaterialSkin.Controls.MaterialButton btnIniciarSesion;
-        private MaterialSkin.Controls.MaterialSwitch toggleMode;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
-        private FontAwesome.Sharp.IconPictureBox iconPictureBox2;
         private MaterialSkin.Controls.MaterialDivider materialDivider1;
         private MaterialSkin.Controls.MaterialLabel materialLabel1;
     }

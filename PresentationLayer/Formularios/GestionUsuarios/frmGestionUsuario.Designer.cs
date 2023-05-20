@@ -62,7 +62,7 @@
             this.btnAsignarCredenciales.Depth = 0;
             this.btnAsignarCredenciales.HighEmphasis = true;
             this.btnAsignarCredenciales.Icon = null;
-            this.btnAsignarCredenciales.Location = new System.Drawing.Point(527, 384);
+            this.btnAsignarCredenciales.Location = new System.Drawing.Point(782, 384);
             this.btnAsignarCredenciales.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnAsignarCredenciales.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnAsignarCredenciales.Name = "btnAsignarCredenciales";
@@ -80,7 +80,7 @@
             this.dgvEmpleados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEmpleados.Location = new System.Drawing.Point(20, 27);
             this.dgvEmpleados.Name = "dgvEmpleados";
-            this.dgvEmpleados.Size = new System.Drawing.Size(692, 326);
+            this.dgvEmpleados.Size = new System.Drawing.Size(947, 336);
             this.dgvEmpleados.TabIndex = 3;
             this.dgvEmpleados.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEmpleados_CellContentClick);
             this.dgvEmpleados.SelectionChanged += new System.EventHandler(this.dgvEmpleados_SelectionChanged);
@@ -90,7 +90,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(738, 474);
+            this.ClientSize = new System.Drawing.Size(997, 480);
             this.ControlBox = false;
             this.Controls.Add(this.btnModificarUsuario);
             this.Controls.Add(this.btnAsignarCredenciales);

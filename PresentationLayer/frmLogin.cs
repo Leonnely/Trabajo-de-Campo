@@ -1,4 +1,5 @@
 ﻿using MaterialSkin.Controls;
+using PresentationLayer;
 using SecurityLayer;
 using System;
 using System.Collections.Generic;
@@ -27,54 +28,88 @@ namespace PresentationLayer
         
         }
 
-        private void toggleMode_CheckedChanged(object sender, EventArgs e)
-        {
-            if (toggleMode.Checked)
-            {
-                materialSkinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.DARK;
-            }
-            else
-            {
-                materialSkinManager.Theme = MaterialSkin.MaterialSkinManager.Themes.LIGHT;
+        //private void btnIniciarSesion_Click(object sender, EventArgs e)
+        //{
+        //    LoginController loginController = new LoginController();
+        //    string identificador = txtIdentificador.Text;
+        //    string password = txtPassword.Text;
 
-            }
-        }
+        //    if (loginController.Login(identificador,password))
+        //    {
+        //        //Ya realizo la logica de sesion
 
+        //        loginController = null;
+        //        MainWindow mainWindow = new MainWindow();
+        //        this.Hide();
+        //        mainWindow.ShowDialog();
+
+        //        txtIdentificador.Clear();
+        //        txtPassword.Clear();
+        //        this.Show();
+        //    }
+        //    else
+        //    {
+        //        loginController.restarIntento();
+        //        if (loginController.Intentos == 0)
+        //        {
+        //            loginController.BlockUsuario(identificador);
+        //        }
+        //        MessageBox.Show("Correo/Usuario o Contraseña incorrectos");
+        //    }
+
+        //}
+
+        LoginController loginController = new LoginController();
         private void btnIniciarSesion_Click(object sender, EventArgs e)
         {
-            LoginController loginController = new LoginController();
             string identificador = txtIdentificador.Text;
             string password = txtPassword.Text;
-
-            if (loginController.Login(identificador,password))
+            try
             {
-                //Ya realizo la logica de sesion
-
-                loginController = null;
-                MainWindow mainWindow = new MainWindow();
-                this.Hide();
-                mainWindow.ShowDialog();
-
-                txtIdentificador.Clear();
-                txtPassword.Clear();
-                this.Show();
-            }
-            else
-            {
-                loginController.restarIntento();
-                if (loginController.Intentos == 0)
+                if (!loginController.isBlocked(identificador))
                 {
-                    loginController.BlockUsuario(identificador);
+                    if (loginController.Login(identificador, password))
+                    {
+                        // Realiza la lógica de inicio de sesión
+
+                        loginController = null;
+                        MainWindow mainWindow = new MainWindow();
+                        this.Hide();
+                        mainWindow.ShowDialog();
+
+                        txtIdentificador.Clear();
+                        txtPassword.Clear();
+                        this.Show();
+                        loginController.resetIntento();
+                    }
+                    else
+                    {
+                        loginController.Intentos -= 1;
+                        if (loginController.Intentos == 0)
+                        {
+                            loginController.BlockUsuario(identificador);
+                            MessageBox.Show("Su cuenta ha sido bloqueada. Comunicarse con el administrador.");
+                        }
+                        else
+                        {
+                            MessageBox.Show("Correo/Usuario o Contraseña incorrectos");
+                        }
+                    }
                 }
-                MessageBox.Show("Correo/Usuario o Contraseña incorrectos");
+                else
+                {
+                    MessageBox.Show("Su Usuario se encuentra Bloqueado");
+                }
             }
-            
+            catch (Exception)
+            {
+                throw;
+            }
         }
 
         private void frmLogin_Load(object sender, EventArgs e)
         {
-            txtIdentificador.Text = "CaRo55";
-            txtPassword.Text = "5555555555";
+           
         }
     }
 }

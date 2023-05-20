@@ -21,7 +21,7 @@ namespace PresentationLayer.Formularios.GestionUsuarios
 
         Empleado oEmpleado;
         EmpleadoBLL GestorEmpleado = new EmpleadoBLL();
-        
+
         public frmAsignarUsuario(Empleado pEmpleado)
         {
             InitializeComponent();
@@ -34,71 +34,39 @@ namespace PresentationLayer.Formularios.GestionUsuarios
             oEmpleado = pEmpleado;
         }
 
-        
-
-        
-
-        private int currentValue = 0;
-        int incrementValue;
-
         private void btnConfirmarUsuario_Click(object sender, EventArgs e)
         {
-            oEmpleado.NombreUsuario = txtUsuario.Text;
-
             UsuarioBLL GestorUsuario = new UsuarioBLL();
             Usuario usuario = new Usuario();
+
+            usuario.codEMP = oEmpleado.codEMP;
             usuario.NombreUsuario = txtUsuario.Text;
+            usuario.Password = txtContraseña.Text;
             usuario.EstadoCuenta = "Activo";
             usuario.FechaCreacion = DateTime.Now;
             usuario.UltimoInicio = DateTime.Now;
-            usuario.codEMP = oEmpleado.codEMP;
-            usuario.Password = txtContraseña.Text;
+            usuario.StateBlock = 0;
 
             GestorUsuario.Agregar(usuario);
+            oEmpleado.EsUsuario = 1;
             GestorEmpleado.Actualizar(oEmpleado);
-
-            materialProgressBar1.Value = 0;
-            Timer timer = new Timer();
-            timer.Interval = 20;
-            incrementValue = 100 / (2000 / timer.Interval);
-            timer.Tick += Timer_Tick;
-            timer.Start();
-        }
-
-
-        private void Timer_Tick(object sender, EventArgs e)
-        {
-            // Incrementar el valor de la barra de progreso
-            currentValue += incrementValue;
-            materialProgressBar1.Value = currentValue;
-
-            // Verificar si se alcanzó el valor máximo (100)
-            if (currentValue >= 100)
-            {
-                // Detener el temporizador
-                Timer timer = (Timer)sender;
-                timer.Stop();
-            }
         }
 
         private void frmAsignarUsuario_Load(object sender, EventArgs e)
         {
-
-           
             txtUsuario.Text = GestorEmpleado.CrearNombreUsuario(oEmpleado);
-            //TODO: Buscar si existe ese usuario
-            txtCorreo.Text = oEmpleado.Correo;
+            txtContraseña.Clear();
+            txtConfirmacionContraseña.Clear();
 
-            //TODO: Para las contraseñas debe utilizarse el DNI
-            txtContraseña.Text = oEmpleado.Telefono;
-            txtConfirmacionContraseña.Text = oEmpleado.Telefono;
+            txtContraseña.Text = oEmpleado.DNI;
+            txtConfirmacionContraseña.Text = oEmpleado.DNI;
         }
 
-        
+
 
         private void txtContraseña_TextChanged(object sender, EventArgs e)
         {
-
+            checkPassword();
         }
 
         private void SwitchPassword_CheckedChanged(object sender, EventArgs e)
@@ -106,17 +74,47 @@ namespace PresentationLayer.Formularios.GestionUsuarios
             if (SwitchPassword.Checked)
             {
                 txtContraseña.Password = false;
-                txtContraseña.Text = oEmpleado.Telefono;
+                txtContraseña.Text = txtContraseña.Text;
                 txtConfirmacionContraseña.Password = false;
-                SwitchPassword.Text = "Ocultar";
+                txtConfirmacionContraseña.Text = txtConfirmacionContraseña.Text;
+
+                iconChar.IconChar = FontAwesome.Sharp.IconChar.EyeSlash;
             }
             else
             {
                 txtContraseña.Password = true;
                 txtContraseña.Text = txtContraseña.Text;
                 txtConfirmacionContraseña.Password = true;
-                SwitchPassword.Text = "Ver";
+                txtConfirmacionContraseña.Text = txtConfirmacionContraseña.Text;
 
+                iconChar.IconChar = FontAwesome.Sharp.IconChar.Eye;
+
+            }
+        }
+
+        private void btnConfirmarUsuario_MouseHover(object sender, EventArgs e)
+        {
+            checkPassword();
+        }
+
+
+        private void txtConfirmacionContraseña_TextChanged(object sender, EventArgs e)
+        {
+            checkPassword();
+        }
+
+        public void checkPassword()
+        {
+            if (!Equals(txtContraseña.Text, txtConfirmacionContraseña.Text))
+            {
+                btnConfirmarUsuario.Enabled = false;
+                lblAvisoPassword.Text = "AVISO: LAS CONTRASEÑAS NO COINCIDEN";
+                lblAvisoPassword.ForeColor = Color.Red;
+            }
+            else
+            {
+                btnConfirmarUsuario.Enabled = true;
+                lblAvisoPassword.Text = "";
             }
         }
     }

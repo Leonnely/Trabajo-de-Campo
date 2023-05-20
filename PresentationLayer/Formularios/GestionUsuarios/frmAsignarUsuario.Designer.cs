@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAsignarUsuario));
             this.btnConfirmarUsuario = new MaterialSkin.Controls.MaterialButton();
             this.materialLabel4 = new MaterialSkin.Controls.MaterialLabel();
             this.txtConfirmacionContraseña = new MaterialSkin.Controls.MaterialTextBox();
@@ -35,10 +36,11 @@
             this.txtContraseña = new MaterialSkin.Controls.MaterialTextBox();
             this.materialLabel2 = new MaterialSkin.Controls.MaterialLabel();
             this.txtUsuario = new MaterialSkin.Controls.MaterialTextBox();
-            this.materialLabel1 = new MaterialSkin.Controls.MaterialLabel();
-            this.txtCorreo = new MaterialSkin.Controls.MaterialTextBox();
             this.SwitchPassword = new MaterialSkin.Controls.MaterialSwitch();
-            this.materialProgressBar1 = new MaterialSkin.Controls.MaterialProgressBar();
+            this.iconChar = new FontAwesome.Sharp.IconPictureBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblAvisoPassword = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.iconChar)).BeginInit();
             this.SuspendLayout();
             // 
             // btnConfirmarUsuario
@@ -49,7 +51,7 @@
             this.btnConfirmarUsuario.Depth = 0;
             this.btnConfirmarUsuario.HighEmphasis = true;
             this.btnConfirmarUsuario.Icon = null;
-            this.btnConfirmarUsuario.Location = new System.Drawing.Point(451, 315);
+            this.btnConfirmarUsuario.Location = new System.Drawing.Point(450, 282);
             this.btnConfirmarUsuario.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnConfirmarUsuario.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnConfirmarUsuario.Name = "btnConfirmarUsuario";
@@ -61,13 +63,14 @@
             this.btnConfirmarUsuario.UseAccentColor = false;
             this.btnConfirmarUsuario.UseVisualStyleBackColor = true;
             this.btnConfirmarUsuario.Click += new System.EventHandler(this.btnConfirmarUsuario_Click);
+            this.btnConfirmarUsuario.MouseHover += new System.EventHandler(this.btnConfirmarUsuario_MouseHover);
             // 
             // materialLabel4
             // 
             this.materialLabel4.AutoSize = true;
             this.materialLabel4.Depth = 0;
             this.materialLabel4.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel4.Location = new System.Drawing.Point(37, 293);
+            this.materialLabel4.Location = new System.Drawing.Point(34, 260);
             this.materialLabel4.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel4.Name = "materialLabel4";
             this.materialLabel4.Size = new System.Drawing.Size(157, 19);
@@ -81,24 +84,24 @@
             this.txtConfirmacionContraseña.Depth = 0;
             this.txtConfirmacionContraseña.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtConfirmacionContraseña.LeadingIcon = null;
-            this.txtConfirmacionContraseña.Location = new System.Drawing.Point(37, 315);
+            this.txtConfirmacionContraseña.Location = new System.Drawing.Point(34, 282);
             this.txtConfirmacionContraseña.MaxLength = 50;
             this.txtConfirmacionContraseña.MouseState = MaterialSkin.MouseState.OUT;
             this.txtConfirmacionContraseña.Multiline = false;
             this.txtConfirmacionContraseña.Name = "txtConfirmacionContraseña";
             this.txtConfirmacionContraseña.Password = true;
-            this.txtConfirmacionContraseña.ReadOnly = true;
             this.txtConfirmacionContraseña.Size = new System.Drawing.Size(263, 50);
             this.txtConfirmacionContraseña.TabIndex = 19;
             this.txtConfirmacionContraseña.Text = "";
             this.txtConfirmacionContraseña.TrailingIcon = null;
+            this.txtConfirmacionContraseña.TextChanged += new System.EventHandler(this.txtConfirmacionContraseña_TextChanged);
             // 
             // materialLabel3
             // 
             this.materialLabel3.AutoSize = true;
             this.materialLabel3.Depth = 0;
             this.materialLabel3.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel3.Location = new System.Drawing.Point(37, 205);
+            this.materialLabel3.Location = new System.Drawing.Point(31, 163);
             this.materialLabel3.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel3.Name = "materialLabel3";
             this.materialLabel3.Size = new System.Drawing.Size(82, 19);
@@ -112,13 +115,12 @@
             this.txtContraseña.Depth = 0;
             this.txtContraseña.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtContraseña.LeadingIcon = null;
-            this.txtContraseña.Location = new System.Drawing.Point(37, 227);
+            this.txtContraseña.Location = new System.Drawing.Point(34, 194);
             this.txtContraseña.MaxLength = 50;
             this.txtContraseña.MouseState = MaterialSkin.MouseState.OUT;
             this.txtContraseña.Multiline = false;
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.Password = true;
-            this.txtContraseña.ReadOnly = true;
             this.txtContraseña.Size = new System.Drawing.Size(263, 50);
             this.txtContraseña.TabIndex = 16;
             this.txtContraseña.Text = "";
@@ -130,7 +132,7 @@
             this.materialLabel2.AutoSize = true;
             this.materialLabel2.Depth = 0;
             this.materialLabel2.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel2.Location = new System.Drawing.Point(37, 24);
+            this.materialLabel2.Location = new System.Drawing.Point(34, 59);
             this.materialLabel2.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialLabel2.Name = "materialLabel2";
             this.materialLabel2.Size = new System.Drawing.Size(55, 19);
@@ -144,7 +146,7 @@
             this.txtUsuario.Depth = 0;
             this.txtUsuario.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             this.txtUsuario.LeadingIcon = null;
-            this.txtUsuario.Location = new System.Drawing.Point(37, 46);
+            this.txtUsuario.Location = new System.Drawing.Point(34, 81);
             this.txtUsuario.MaxLength = 50;
             this.txtUsuario.MouseState = MaterialSkin.MouseState.OUT;
             this.txtUsuario.Multiline = false;
@@ -155,70 +157,60 @@
             this.txtUsuario.Text = "";
             this.txtUsuario.TrailingIcon = null;
             // 
-            // materialLabel1
-            // 
-            this.materialLabel1.AutoSize = true;
-            this.materialLabel1.Depth = 0;
-            this.materialLabel1.Font = new System.Drawing.Font("Roboto", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.materialLabel1.Location = new System.Drawing.Point(37, 113);
-            this.materialLabel1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialLabel1.Name = "materialLabel1";
-            this.materialLabel1.Size = new System.Drawing.Size(47, 19);
-            this.materialLabel1.TabIndex = 13;
-            this.materialLabel1.Text = "Correo";
-            // 
-            // txtCorreo
-            // 
-            this.txtCorreo.AnimateReadOnly = false;
-            this.txtCorreo.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtCorreo.Depth = 0;
-            this.txtCorreo.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.txtCorreo.LeadingIcon = null;
-            this.txtCorreo.Location = new System.Drawing.Point(37, 135);
-            this.txtCorreo.MaxLength = 50;
-            this.txtCorreo.MouseState = MaterialSkin.MouseState.OUT;
-            this.txtCorreo.Multiline = false;
-            this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.ReadOnly = true;
-            this.txtCorreo.Size = new System.Drawing.Size(263, 50);
-            this.txtCorreo.TabIndex = 12;
-            this.txtCorreo.Text = "";
-            this.txtCorreo.TrailingIcon = null;
-            // 
             // SwitchPassword
             // 
             this.SwitchPassword.AutoSize = true;
             this.SwitchPassword.Depth = 0;
-            this.SwitchPassword.Location = new System.Drawing.Point(306, 234);
+            this.SwitchPassword.Location = new System.Drawing.Point(198, 154);
             this.SwitchPassword.Margin = new System.Windows.Forms.Padding(0);
             this.SwitchPassword.MouseLocation = new System.Drawing.Point(-1, -1);
             this.SwitchPassword.MouseState = MaterialSkin.MouseState.HOVER;
             this.SwitchPassword.Name = "SwitchPassword";
             this.SwitchPassword.Ripple = true;
-            this.SwitchPassword.Size = new System.Drawing.Size(81, 37);
+            this.SwitchPassword.Size = new System.Drawing.Size(58, 37);
             this.SwitchPassword.TabIndex = 23;
-            this.SwitchPassword.Text = "Ver";
             this.SwitchPassword.UseVisualStyleBackColor = true;
             this.SwitchPassword.CheckedChanged += new System.EventHandler(this.SwitchPassword_CheckedChanged);
             // 
-            // materialProgressBar1
+            // iconChar
             // 
-            this.materialProgressBar1.Depth = 0;
-            this.materialProgressBar1.Location = new System.Drawing.Point(203, 387);
-            this.materialProgressBar1.MarqueeAnimationSpeed = 1000;
-            this.materialProgressBar1.MouseState = MaterialSkin.MouseState.HOVER;
-            this.materialProgressBar1.Name = "materialProgressBar1";
-            this.materialProgressBar1.Size = new System.Drawing.Size(276, 5);
-            this.materialProgressBar1.Step = 1;
-            this.materialProgressBar1.TabIndex = 24;
+            this.iconChar.BackColor = System.Drawing.SystemColors.Control;
+            this.iconChar.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.iconChar.IconChar = FontAwesome.Sharp.IconChar.Eye;
+            this.iconChar.IconColor = System.Drawing.SystemColors.ControlText;
+            this.iconChar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconChar.Location = new System.Drawing.Point(259, 157);
+            this.iconChar.Name = "iconChar";
+            this.iconChar.Size = new System.Drawing.Size(32, 32);
+            this.iconChar.TabIndex = 24;
+            this.iconChar.TabStop = false;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(359, 85);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(372, 104);
+            this.label1.TabIndex = 25;
+            this.label1.Text = resources.GetString("label1.Text");
+            // 
+            // lblAvisoPassword
+            // 
+            this.lblAvisoPassword.AutoSize = true;
+            this.lblAvisoPassword.Location = new System.Drawing.Point(34, 339);
+            this.lblAvisoPassword.Name = "lblAvisoPassword";
+            this.lblAvisoPassword.Size = new System.Drawing.Size(0, 13);
+            this.lblAvisoPassword.TabIndex = 26;
             // 
             // frmAsignarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(648, 437);
+            this.ClientSize = new System.Drawing.Size(777, 417);
             this.ControlBox = false;
-            this.Controls.Add(this.materialProgressBar1);
+            this.Controls.Add(this.lblAvisoPassword);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.iconChar);
             this.Controls.Add(this.SwitchPassword);
             this.Controls.Add(this.btnConfirmarUsuario);
             this.Controls.Add(this.materialLabel4);
@@ -227,12 +219,11 @@
             this.Controls.Add(this.txtContraseña);
             this.Controls.Add(this.materialLabel2);
             this.Controls.Add(this.txtUsuario);
-            this.Controls.Add(this.materialLabel1);
-            this.Controls.Add(this.txtCorreo);
             this.Name = "frmAsignarUsuario";
             this.Sizable = false;
             this.Text = "frmAsignarUsuario";
             this.Load += new System.EventHandler(this.frmAsignarUsuario_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.iconChar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -247,9 +238,9 @@
         private MaterialSkin.Controls.MaterialTextBox txtContraseña;
         private MaterialSkin.Controls.MaterialLabel materialLabel2;
         private MaterialSkin.Controls.MaterialTextBox txtUsuario;
-        private MaterialSkin.Controls.MaterialLabel materialLabel1;
-        private MaterialSkin.Controls.MaterialTextBox txtCorreo;
         private MaterialSkin.Controls.MaterialSwitch SwitchPassword;
-        private MaterialSkin.Controls.MaterialProgressBar materialProgressBar1;
+        private FontAwesome.Sharp.IconPictureBox iconChar;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblAvisoPassword;
     }
 }

@@ -2,6 +2,7 @@
 using Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -21,7 +22,7 @@ namespace DataAccessLayer.Modelos
 
         public void Actualizar(Empleado entidad)
         {
-             string query = "UPDATE Empleado SET NombreUsuario = @NombreUsuario, Nombre = @Nombre, Apellido = @Apellido, Correo = @Correo, DireccionHogar = @DireccionHogar, Telefono = @Telefono, EstadoEmpleado = @EstadoEmpleado, FechaIngreso = @FechaIngreso WHERE codEMP = @codEMP";
+             string query = "UPDATE Empleado SET NombreUsuario = @NombreUsuario, Nombre = @Nombre, Apellido = @Apellido, Correo = @Correo, DireccionHogar = @DireccionHogar, Telefono = @Telefono, EstadoEmpleado = @EstadoEmpleado, FechaIngreso = @FechaIngreso,EsUsuario = @EsUsuario WHERE codEMP = @codEMP";
 
             oConnection.Open();
             SqlTransaction transaction = oConnection.BeginTransaction();
@@ -31,7 +32,6 @@ namespace DataAccessLayer.Modelos
                 SqlCommand cmd = new SqlCommand(query, oConnection);
                 cmd.Transaction = transaction;
 
-                cmd.Parameters.AddWithValue("@NombreUsuario", entidad.NombreUsuario);
                 cmd.Parameters.AddWithValue("@Nombre", entidad.Nombre);
                 cmd.Parameters.AddWithValue("@Apellido", entidad.Apellido);
                 cmd.Parameters.AddWithValue("@Correo", entidad.Correo);
@@ -39,6 +39,7 @@ namespace DataAccessLayer.Modelos
                 cmd.Parameters.AddWithValue("@Telefono", entidad.Telefono);
                 cmd.Parameters.AddWithValue("@EstadoEmpleado", entidad.EstadoEmpleado);
                 cmd.Parameters.AddWithValue("@FechaIngreso", entidad.FechaIngreso);
+                cmd.Parameters.AddWithValue("@EsUsuario", entidad.EsUsuario);
                 cmd.Parameters.AddWithValue("@codEMP", entidad.codEMP);
 
                 cmd.ExecuteNonQuery();
@@ -100,7 +101,7 @@ namespace DataAccessLayer.Modelos
 
                 if (reader.IsDBNull(4) == false)
                 {
-                    emp.NombreUsuario = (string)reader["NombreUsuario"];
+                    //emp.NombreUsuario = (string)reader["NombreUsuario"];
                 }
             }
             oConnection.Close();
@@ -134,7 +135,7 @@ namespace DataAccessLayer.Modelos
 
                 if (reader.IsDBNull(4) == false)
                 {
-                    empleado.NombreUsuario = (string)reader["NombreUsuario"];
+                    //empleado.NombreUsuario = (string)reader["NombreUsuario"];
                 }
 
                 miLista.Add(empleado);
@@ -143,5 +144,38 @@ namespace DataAccessLayer.Modelos
             oConnection.Dispose();
             return miLista;
         }
+
+        public List<Empleado> ObtenerTodosSinUsuarios()
+        {
+            List<Empleado> miLista = new List<Empleado>();
+            DateTime FechaIngreso;
+
+            SqlCommand command = new SqlCommand("ObtenerEmpleadosSinUsuario", oConnection);
+            command.CommandType = CommandType.StoredProcedure;
+            oConnection.Open();
+            SqlDataReader reader = command.ExecuteReader();
+
+            while (reader.Read())
+            {
+                Empleado empleado = new Empleado();
+                empleado.codEMP = (int)reader["IDEmp"];
+                empleado.Nombre = (string)reader["Nombre"];
+                empleado.Apellido = (string)reader["Apellido"];
+                empleado.DNI = (string)reader["DNI"];
+                empleado.Correo = (string)reader["Correo"];
+                empleado.DireccionHogar = (string)reader["DireccionHogar"];
+                empleado.Telefono = (string)reader["Telefono"];
+                empleado.EstadoEmpleado = (string)reader["EstadoEmpleado"];
+                if (DateTime.TryParse(reader["FechaIngreso"].ToString(), out FechaIngreso))
+                {
+                    empleado.FechaIngreso = FechaIngreso;
+                }
+                miLista.Add(empleado);
+            }
+            oConnection.Close();
+            oConnection.Dispose();
+            return miLista;
+        }
+
     }
 }

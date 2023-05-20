@@ -51,5 +51,9 @@ namespace BusinessLogicLayer
             return GestorEmpleados.ObtenerTodos();
         }
 
+        public object ObtenerTodosSinUsuarios()
+        {
+            return GestorEmpleados.ObtenerTodosSinUsuarios();
+        }
     }
 }

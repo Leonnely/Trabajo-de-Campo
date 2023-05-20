@@ -42,6 +42,7 @@
             this.btnPerfil = new FontAwesome.Sharp.IconMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.btnCerrarSesion = new FontAwesome.Sharp.IconMenuItem();
+            this.btnDesbloquearUsuario = new FontAwesome.Sharp.IconMenuItem();
             this.panelMainMenu.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -128,10 +129,12 @@
             // empleadosToolStripMenuItem
             // 
             this.empleadosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnConsultarEmpleados});
+            this.btnConsultarEmpleados,
+            this.btnDesbloquearUsuario});
             this.empleadosToolStripMenuItem.Name = "empleadosToolStripMenuItem";
-            this.empleadosToolStripMenuItem.Size = new System.Drawing.Size(98, 25);
-            this.empleadosToolStripMenuItem.Text = "Empleados";
+            this.empleadosToolStripMenuItem.Size = new System.Drawing.Size(83, 25);
+            this.empleadosToolStripMenuItem.Text = "Usuarios";
+            this.empleadosToolStripMenuItem.Click += new System.EventHandler(this.empleadosToolStripMenuItem_Click);
             // 
             // btnConsultarEmpleados
             // 
@@ -139,8 +142,8 @@
             this.btnConsultarEmpleados.IconColor = System.Drawing.Color.Black;
             this.btnConsultarEmpleados.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnConsultarEmpleados.Name = "btnConsultarEmpleados";
-            this.btnConsultarEmpleados.Size = new System.Drawing.Size(227, 26);
-            this.btnConsultarEmpleados.Text = "Consultar Empleados";
+            this.btnConsultarEmpleados.Size = new System.Drawing.Size(226, 26);
+            this.btnConsultarEmpleados.Text = "Crear Usuario";
             this.btnConsultarEmpleados.Click += new System.EventHandler(this.btnConsultarEmpleados_Click);
             // 
             // configuracionToolStripMenuItem
@@ -166,13 +169,13 @@
             this.btnPerfil.IconColor = System.Drawing.Color.Black;
             this.btnPerfil.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnPerfil.Name = "btnPerfil";
-            this.btnPerfil.Size = new System.Drawing.Size(180, 24);
+            this.btnPerfil.Size = new System.Drawing.Size(166, 24);
             this.btnPerfil.Text = "Mi Perfil";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(163, 6);
             // 
             // btnCerrarSesion
             // 
@@ -181,9 +184,19 @@
             this.btnCerrarSesion.IconColor = System.Drawing.Color.Black;
             this.btnCerrarSesion.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCerrarSesion.Name = "btnCerrarSesion";
-            this.btnCerrarSesion.Size = new System.Drawing.Size(180, 24);
+            this.btnCerrarSesion.Size = new System.Drawing.Size(166, 24);
             this.btnCerrarSesion.Text = "Cerrar Sesión";
             this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
+            // 
+            // btnDesbloquearUsuario
+            // 
+            this.btnDesbloquearUsuario.IconChar = FontAwesome.Sharp.IconChar.UserLock;
+            this.btnDesbloquearUsuario.IconColor = System.Drawing.Color.Black;
+            this.btnDesbloquearUsuario.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnDesbloquearUsuario.Name = "btnDesbloquearUsuario";
+            this.btnDesbloquearUsuario.Size = new System.Drawing.Size(226, 26);
+            this.btnDesbloquearUsuario.Text = "Desbloquear Usuario";
+            this.btnDesbloquearUsuario.Click += new System.EventHandler(this.btnDesbloquearUsuario_Click);
             // 
             // MainWindow
             // 
@@ -226,6 +239,7 @@
         private MaterialSkin.Controls.MaterialLabel lblDia;
         private MaterialSkin.Controls.MaterialDivider materialDivider1;
         private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem;
+        private FontAwesome.Sharp.IconMenuItem btnDesbloquearUsuario;
     }
 }
 

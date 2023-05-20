@@ -24,28 +24,23 @@ namespace DataAccessLayer.Modelos
 
         public void Agregar(Usuario oUsuario)
         {
-            string query = "INSERT INTO Usuario ([NombreUsuario], " +
-                "[Password], " +
-                "[FechaCreacion], " +
-                "[EstadoCuenta], " +
-                "[UltimoInicio], " +
-                "[codEMP]) VALUES (@NombreUsuario, @Password, @FechaCreacion, @EstadoCuenta, @UltimoInicio, @CodEMP)";
-
-
             oConnection.Open();
             SqlTransaction transaction = oConnection.BeginTransaction();
 
             try
             {
-                SqlCommand cmd = new SqlCommand(query, oConnection);
+                SqlCommand cmd = new SqlCommand("InsertarUsuario", oConnection);
+                cmd.CommandType = System.Data.CommandType.StoredProcedure;
+
                 cmd.Transaction = transaction;
 
-                cmd.Parameters.AddWithValue("@NombreUsuario", oUsuario.NombreUsuario);
-                cmd.Parameters.AddWithValue("@Password", oUsuario.Password);
-                cmd.Parameters.AddWithValue("@FechaCreacion", oUsuario.FechaCreacion);
-                cmd.Parameters.AddWithValue("@EstadoCuenta", oUsuario.EstadoCuenta);
-                cmd.Parameters.AddWithValue("@UltimoInicio", oUsuario.UltimoInicio);
-                cmd.Parameters.AddWithValue("@CodEMP", oUsuario.codEMP);
+                cmd.Parameters.Add(new SqlParameter("@IDEmp", oUsuario.codEMP));
+                cmd.Parameters.Add(new SqlParameter("@NombreUsuario", oUsuario.NombreUsuario));
+                cmd.Parameters.Add(new SqlParameter("@Password", oUsuario.Password));
+                cmd.Parameters.Add(new SqlParameter("@FechaCreacion", oUsuario.FechaCreacion));
+                cmd.Parameters.Add(new SqlParameter("@EstadoCuenta", oUsuario.EstadoCuenta));
+                cmd.Parameters.Add(new SqlParameter("@UltimoInicio", oUsuario.UltimoInicio));
+                cmd.Parameters.Add(new SqlParameter("@StateBlock", oUsuario.StateBlock));
 
                 cmd.ExecuteNonQuery();
 
