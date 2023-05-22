@@ -33,7 +33,7 @@ namespace PresentationLayer.Formularios.GestionUsuarios
         {
             EmpleadoBLL GestorEmpleado = new EmpleadoBLL();
             dgvEmpleados.DataSource = GestorEmpleado.ObtenerTodosSinUsuarios();
-            
+
             btnAsignarCredenciales.Enabled = false;
         }
 
@@ -51,7 +51,11 @@ namespace PresentationLayer.Formularios.GestionUsuarios
                 oEmpleadoSeleccionado = (Empleado)fila.DataBoundItem;
                 
                 btnAsignarCredenciales.Enabled = true;
-
+            }
+            else
+            {
+                oEmpleadoSeleccionado = null;
+                btnAsignarCredenciales.Enabled = false;
             }
         }
 
@@ -71,8 +75,7 @@ namespace PresentationLayer.Formularios.GestionUsuarios
 
             childForm.Show();
         }
-
-
+        
     }
 }
 

@@ -20,7 +20,7 @@ namespace SecurityLayer
 
         private static Empleado _emp;
 
-        public static SessionManager Connect(string user)
+        public static SessionManager Connect(int IDempleado)
         {
             EmpleadoDAL empleadoDAL = new EmpleadoDAL();
             UsuarioDAL usuarioDAL = new UsuarioDAL();
@@ -28,7 +28,7 @@ namespace SecurityLayer
             if (_session == null)
             {
                 _session = new SessionManager();
-                _emp = empleadoDAL.ObtenerPorUsuario(user);
+                _emp = empleadoDAL.ObtenerPorId(IDempleado);
                 _emp.usuario = usuarioDAL.ObtenerPorId(_emp.codEMP);
             }
 

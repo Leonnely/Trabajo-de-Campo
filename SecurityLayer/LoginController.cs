@@ -37,7 +37,7 @@ namespace SecurityLayer
             Credenciales credenciales = new Credenciales();
             if (credenciales.getCredenciales(username, password))
             {
-                SessionManager.Connect(username);
+                SessionManager.Connect(credenciales.ID);
 
                 return true;
             }

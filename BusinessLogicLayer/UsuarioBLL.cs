@@ -20,7 +20,7 @@ namespace BusinessLogicLayer
         } 
         public void Actualizar(Usuario entidad)
         {
-            throw new NotImplementedException();
+            GestorUsuario.Actualizar(entidad);
         }
 
         public void Agregar(Usuario oUsuario)
@@ -45,6 +45,14 @@ namespace BusinessLogicLayer
         public List<Usuario> ObtenerTodos()
         {
             throw new NotImplementedException();
+        }
+
+        public List<Usuario> ObtenerUsuariosBloqueados()
+        {
+            List<Usuario> Usuarios = GestorUsuario.ObtenerTodos();
+            Usuarios = Usuarios.FindAll(user => user.StateBlock == true).ToList();
+
+            return Usuarios;
         }
     }
 }

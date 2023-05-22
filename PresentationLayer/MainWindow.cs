@@ -12,6 +12,8 @@ using System.Windows.Forms;
 using PresentationLayer.Formularios.GestionUsuarios;
 using BusinessLogicLayer;
 using SecurityLayer;
+using PresentationLayer.Formularios;
+using PresentationLayer.Formularios.Perfil;
 
 namespace PresentationLayer
 {
@@ -31,13 +33,11 @@ namespace PresentationLayer
             //Application.Exit();
         }
 
-
-
         private void ShowChildFormInContainer(Form childForm, Panel containerPanel)
         {
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
-            //childForm.Location = new Point(0, 0);
+            childForm.Location = new Point(0, 0);
             containerPanel.Controls.Clear();
             containerPanel.Controls.Add(childForm);
             childForm.Show();
@@ -45,38 +45,8 @@ namespace PresentationLayer
 
         private void MainWindow_Load(object sender, EventArgs e)
         {
-            lblDia.Text = DateTime.Today.ToString("dddd") + " " + DateTime.Today.ToString("M");
-            string formattedDateTime = DateTime.Now.ToString("HH:mm:ss");
-
-            
-            Timer timer = new Timer();
-            timer.Interval = 1000; // 1000 ms = 1 segundo
-            timer.Tick += Timer_Tick;
-            timer.Start();
-
-            
-        }
-
-        private void Timer_Tick(object sender, EventArgs e)
-        {
-            // Formatear la fecha y hora actual en el formato deseado
-            string formattedDateTime = DateTime.Now.ToString("HH:mm:ss");
-
-            // Actualizar el texto del reloj con el formato personalizado
-            lblReloj.Text = formattedDateTime;
-            CenterControl(lblDia);
-            CenterControl(lblReloj);
-        }
-
-        private void CenterControl(Control control)
-        {
-            int x = (this.ClientSize.Width - control.Width) / 2;
-            control.Location = new Point(x,control.Location.Y);
-        }
-
-        private void MainWindow_FormClosed(object sender, FormClosedEventArgs e)
-        {
-
+            Form frmHome = new frmHome();
+            ShowChildFormInContainer(frmHome, panelMainMenu);
         }
 
         private void btnConsultarEmpleados_Click(object sender, EventArgs e)
@@ -107,6 +77,21 @@ namespace PresentationLayer
 
         }
 
-        
+        private void panelMainMenu_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void homeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frmHome = new frmHome();
+            ShowChildFormInContainer(frmHome, panelMainMenu);
+        }
+
+        private void btnCambiarContraseña_Click(object sender, EventArgs e)
+        {
+            Form frmCambiarContraseña = new frmCambiarContraseña();
+            ShowChildFormInContainer(frmCambiarContraseña, panelMainMenu);
+        }
     }
 }

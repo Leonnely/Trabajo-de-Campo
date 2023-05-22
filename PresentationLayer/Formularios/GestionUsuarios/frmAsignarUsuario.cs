@@ -45,7 +45,7 @@ namespace PresentationLayer.Formularios.GestionUsuarios
             usuario.EstadoCuenta = "Activo";
             usuario.FechaCreacion = DateTime.Now;
             usuario.UltimoInicio = DateTime.Now;
-            usuario.StateBlock = 0;
+            usuario.StateBlock = false;
 
             GestorUsuario.Agregar(usuario);
             oEmpleado.EsUsuario = 1;

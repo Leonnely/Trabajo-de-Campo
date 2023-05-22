@@ -72,15 +72,14 @@ namespace PresentationLayer
                     {
                         // Realiza la lógica de inicio de sesión
 
-                        loginController = null;
                         MainWindow mainWindow = new MainWindow();
                         this.Hide();
                         mainWindow.ShowDialog();
 
                         txtIdentificador.Clear();
                         txtPassword.Clear();
-                        this.Show();
                         loginController.resetIntento();
+                        this.Show();
                     }
                     else
                     {

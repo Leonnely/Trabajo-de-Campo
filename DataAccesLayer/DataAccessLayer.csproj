@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Connection.cs" />
     <Compile Include="Modelos\EmpleadoDAL.cs" />
+    <Compile Include="Modelos\GenericOperationsDS.cs" />
     <Compile Include="Modelos\UsuarioDAL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

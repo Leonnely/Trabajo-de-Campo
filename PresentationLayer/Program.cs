@@ -16,9 +16,8 @@ namespace PresentationLayer
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new frmLogin()); //Principal
-
-            Application.Run(new MainWindow()); //Desarrollo crear usuarios
+            Application.Run(new frmLogin()); //Principal
+            //Application.Run(new MainWindow()); //Desarrollo crear usuarios
 
 
         }

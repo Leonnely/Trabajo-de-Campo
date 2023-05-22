@@ -15,6 +15,7 @@ namespace SecurityLayer
 
         public string NombreUsuario { get; set; }
         public string passwordHash { get; set; }
+        public int ID { get; set; }
 
         public Credenciales()
         {
@@ -23,7 +24,7 @@ namespace SecurityLayer
 
         public bool getCredenciales(string identificador,string PasswordInput)
         {
-            string query = "SELECT NombreUsuario,Password FROM Usuarios WHERE NombreUsuario = @NombreUsuario";
+            string query = "SELECT NombreUsuario,Password,IDEmp FROM Usuarios WHERE NombreUsuario = @NombreUsuario";
 
             oConnection.Open();
             SqlCommand cmd = new SqlCommand(query,oConnection);
@@ -31,8 +32,8 @@ namespace SecurityLayer
             SqlDataReader Reader = cmd.ExecuteReader();
             while (Reader.Read())
             {
-                NombreUsuario = Reader[0].ToString();
                 passwordHash = Reader[1].ToString();
+                ID = (int)Reader[2];
             }
             oConnection.Close();
 

@@ -28,31 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnModificarUsuario = new MaterialSkin.Controls.MaterialButton();
             this.btnAsignarCredenciales = new MaterialSkin.Controls.MaterialButton();
             this.dgvEmpleados = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmpleados)).BeginInit();
             this.SuspendLayout();
-            // 
-            // btnModificarUsuario
-            // 
-            this.btnModificarUsuario.AutoSize = false;
-            this.btnModificarUsuario.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnModificarUsuario.Density = MaterialSkin.Controls.MaterialButton.MaterialButtonDensity.Default;
-            this.btnModificarUsuario.Depth = 0;
-            this.btnModificarUsuario.HighEmphasis = true;
-            this.btnModificarUsuario.Icon = null;
-            this.btnModificarUsuario.Location = new System.Drawing.Point(20, 384);
-            this.btnModificarUsuario.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            this.btnModificarUsuario.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnModificarUsuario.Name = "btnModificarUsuario";
-            this.btnModificarUsuario.NoAccentTextColor = System.Drawing.Color.Empty;
-            this.btnModificarUsuario.Size = new System.Drawing.Size(194, 47);
-            this.btnModificarUsuario.TabIndex = 5;
-            this.btnModificarUsuario.Text = "Modificar usuario";
-            this.btnModificarUsuario.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
-            this.btnModificarUsuario.UseAccentColor = false;
-            this.btnModificarUsuario.UseVisualStyleBackColor = true;
             // 
             // btnAsignarCredenciales
             // 
@@ -92,7 +71,6 @@
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(997, 480);
             this.ControlBox = false;
-            this.Controls.Add(this.btnModificarUsuario);
             this.Controls.Add(this.btnAsignarCredenciales);
             this.Controls.Add(this.dgvEmpleados);
             this.FormStyle = MaterialSkin.Controls.MaterialForm.FormStyles.ActionBar_None;
@@ -113,8 +91,6 @@
         }
 
         #endregion
-
-        private MaterialSkin.Controls.MaterialButton btnModificarUsuario;
         private MaterialSkin.Controls.MaterialButton btnAsignarCredenciales;
         private System.Windows.Forms.DataGridView dgvEmpleados;
     }

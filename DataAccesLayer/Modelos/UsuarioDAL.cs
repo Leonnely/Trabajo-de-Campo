@@ -2,6 +2,7 @@
 using Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -19,7 +20,28 @@ namespace DataAccessLayer.Modelos
 
         public void Actualizar(Usuario entidad)
         {
-            throw new NotImplementedException();
+            string query = "UPDATE Usuarios SET " +
+                            "NombreUsuario = @NombreUsuario, " +
+                            "Password = @Password, " +
+                            "EstadoCuenta = @EstadoCuenta, " +
+                            //"UltimoInicio = @UltimoInicio, " +
+                            "StateBlock = @StateBlock " +
+                            "WHERE IDEmp = @IDEmp";
+
+            // Asigna los parámetros
+            SqlCommand cmd = new SqlCommand(query, oConnection);
+            cmd.Parameters.AddWithValue("@IDEmp", entidad.codEMP);
+            cmd.Parameters.AddWithValue("@NombreUsuario", entidad.NombreUsuario);
+            cmd.Parameters.AddWithValue("@Password", entidad.Password);
+            cmd.Parameters.AddWithValue("@EstadoCuenta", entidad.EstadoCuenta);
+            //cmd.Parameters.AddWithValue("@UltimoInicio", entidad.UltimoInicio);
+            cmd.Parameters.AddWithValue("@StateBlock", entidad.StateBlock);
+            oConnection.Open();
+
+            // Ejecuta la consulta de actualización
+            cmd.ExecuteNonQuery();
+            oConnection.Close();
+            
         }
 
         public void Agregar(Usuario oUsuario)
@@ -66,18 +88,18 @@ namespace DataAccessLayer.Modelos
         {
             Usuario usuario = new Usuario();
 
-            string query = "SELECT * FROM Usuario WHERE codEMP = @codEMP";
+            string query = "SELECT * FROM Usuarios WHERE IDEmp = @codEMP";
             oConnection.Open();
             SqlCommand cmd = new SqlCommand(query, oConnection);
             cmd.Parameters.AddWithValue("@codEMP", codEMP);
             SqlDataReader reader = cmd.ExecuteReader();
             if (reader.Read()) 
             {
+                usuario.codEMP = (int)reader["IDEmp"];
                 usuario.NombreUsuario = (string)reader["NombreUsuario"];
-                usuario.EstadoCuenta = (string)reader["EstadoCuenta"];
-                usuario.codEMP = (int)reader["codEMP"];
-                usuario.FechaCreacion = (DateTime)reader["FechaCreacion"];
                 usuario.Password = (string)reader["Password"];
+                usuario.FechaCreacion = (DateTime)reader["FechaCreacion"];
+                usuario.EstadoCuenta = (string)reader["EstadoCuenta"];
             }
             oConnection.Close();
             return usuario;
@@ -85,7 +107,28 @@ namespace DataAccessLayer.Modelos
 
         public List<Usuario> ObtenerTodos()
         {
-            throw new NotImplementedException();
+            List<Usuario> Usuarios = new List<Usuario>();
+            string query = "SELECT * FROM Usuarios";
+            oConnection.Open();
+            SqlCommand cmd = new SqlCommand(query, oConnection);
+            SqlDataReader reader = cmd.ExecuteReader();
+            while (reader.Read())
+            {
+                Usuario usuario = new Usuario();
+                
+                usuario.codEMP = (int)reader["IDEmp"];
+                usuario.NombreUsuario = (string)reader["NombreUsuario"];
+                usuario.Password = (string)reader["Password"];
+                usuario.FechaCreacion = (DateTime)reader["FechaCreacion"];
+                usuario.EstadoCuenta = (string)reader["EstadoCuenta"];
+                usuario.StateBlock = (bool)reader["StateBlock"];
+            
+                Usuarios.Add(usuario);
+            }
+            oConnection.Close();
+            return Usuarios;
         }
+
+        
     }
 }
